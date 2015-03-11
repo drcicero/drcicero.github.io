@@ -5,31 +5,31 @@
   <subtitle>Micro, Link und Dev-log</subtitle>
   <id>http://drcicero.github.io/</id>
   <author><name>DrCicero</name></author>
-  <updated>{{ now }}</updated>
+  <updated>2015-03-11T03:22:04Z</updated>
 
   <link rel="self" type="application/atom+xml" href="http://drcicero.github.io/feed.atom"/>
   <link rel="alternate" type="text/html" href="http://drcicero.github.io/"/>
 
 <entry>
-  <title type=html>Love2d</title> <published>2015-03-11</published> <updated>2015-03-11</updated> <id>http://drcicero.github.io/#2015-03-11</id> <link rel=alternate href=http://drcicero.github.io/#2015-03-11 type=text/html></link> <summary type=html>
-  <p&gt;is a wonderful engine for lua based 2d games, that i have to recommend!</p&gt;
+  <title type="html">Game Engine: Love2d</title> <published>2015-03-11T22:00:00Z</published> <updated>2015-03-11T22:00:00Z</updated> <id>http://drcicero.github.io/#2015-03-11T22:00:00Z</id> <link rel="alternate" type="text/html" href="http://drcicero.github.io/#2015-03-11T22:00:00Z"/> <summary type="html">
+  &lt;p&gt;is a wonderful engine for lua based 2d games, that i have to recommend!&lt;/p&gt;
 </summary></entry>
 <entry>
-  <title type=html>Puzzle Game: Hat Cat</title> <published>2015-03-10</published> <updated>2015-03-10</updated> <id>http://drcicero.github.io/#2015-03-10</id> <link rel=alternate href=http://drcicero.github.io/#2015-03-10 type=text/html></link> <summary type=html>
-  <p&gt;and the obvious crimes against the fundamental laws of physics is a mind-boggling 2d puzzle game about space-loops, powered by love2d.</p&gt;
+  <title type="html">Puzzle: Hat Cat</title> <published>2015-03-10T20:00:00Z</published> <updated>2015-03-10T20:00:00Z</updated> <id>http://drcicero.github.io/#2015-03-10T20:00:00Z</id> <link rel="alternate" type="text/html" href="http://drcicero.github.io/#2015-03-10T20:00:00Z"/> <summary type="html">
+  &lt;p&gt;and the obvious crimes against the fundamental laws of physics is a mind-boggling 2d puzzle game about space-loops, powered by love2d.&lt;/p&gt;
 </summary></entry>
 <entry>
-  <title type=html>One Button Game: Sienna</title> <published>2015-03-09</published> <updated>2015-03-09</updated> <id>http://drcicero.github.io/#2015-03-09</id> <link rel=alternate href=http://drcicero.github.io/#2015-03-09 type=text/html></link> <summary type=html>
-  <p&gt;by tangram is a fun example of the capabillities of the love2d engine!</p&gt;
+  <title type="html">One Button: Sienna</title> <published>2015-03-09T23:00:00Z</published> <updated>2015-03-09T23:00:00Z</updated> <id>http://drcicero.github.io/#2015-03-09T23:00:00Z</id> <link rel="alternate" type="text/html" href="http://drcicero.github.io/#2015-03-09T23:00:00Z"/> <summary type="html">
+  &lt;p&gt;by tangram is a fast-paced one button runner and a fun example of the capabillities of the love2d engine!&lt;/p&gt;
 </summary></entry>
 <entry>
-  <title type=html>Flash Adventure: Phoenotopia</title> <published>2015-03-08</published> <updated>2015-03-08</updated> <id>http://drcicero.github.io/#2015-03-08</id> <link rel=alternate href=http://drcicero.github.io/#2015-03-08 type=text/html></link> <summary type=html>
-  <p&gt;is a free fun action puzzle platformer! (took me quite some time to finish.)</p&gt;
+  <title type="html">Flash Adventure: Phoenotopia</title> <published>2015-03-08T19:00:00Z</published> <updated>2015-03-08T19:00:00Z</updated> <id>http://drcicero.github.io/#2015-03-08T19:00:00Z</id> <link rel="alternate" type="text/html" href="http://drcicero.github.io/#2015-03-08T19:00:00Z"/> <summary type="html">
+  &lt;p&gt;is a free fun action puzzle platformer with a cool story! (took me quite some time to finish.)&lt;/p&gt;
 </summary></entry>
 <entry>
-  <title type=html>Welcome,</title> <published>2015-03-07</published> <updated>2015-03-07</updated> <id>http://drcicero.github.io/#2015-03-07</id> <link rel=alternate href=http://drcicero.github.io/#2015-03-07 type=text/html></link> <summary type=html>
-  <p&gt;i am drcicero and this is my going to be my (micro)-blog. From time to time i am going to write a post. Mostly these will consist of links or other forms of recommendations.</p&gt;
-  <p&gt;Be sure to subscribe using your favorite rss/atom reader.</p&gt;
+  <title type="html">Welcome,</title> <published>2015-03-07T20:00:00Z</published> <updated>2015-03-07T20:00:00Z</updated> <id>http://drcicero.github.io/#2015-03-07T20:00:00Z</id> <link rel="alternate" type="text/html" href="http://drcicero.github.io/#2015-03-07T20:00:00Z"/> <summary type="html">
+  &lt;p&gt;i am drcicero and this is my micro-blog. From time to time i am going to write a post. Mostly these will consist of links or other forms of recommendations.&lt;/p&gt;
+  &lt;p&gt;Be sure to subscribe using your favorite rss/atom reader.&lt;/p&gt;
 </summary></entry>
 
 
