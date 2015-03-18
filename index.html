@@ -1,71 +1,66 @@
 <!doctype html>
 <html><head>
   <meta charset=utf-8>
-  <title>DrCicero</title>
+  <title>Home - drcicero</title>
+  <link rel="shortcut icon" href="http://drcicero.github.io/avatar.png">
+
   <style>
-html {background: #222} body {max-width: 35em; margin: auto; padding: 0 2em;
-  font: 18px/1.4 "Droid Sans","Helvetica Neue",Helvetica,sans-serif; background: #fff}
-h1 {padding:0; margin:0; font-weight: bold; font-size: 1.5em}
-small {opacity: .5; font-size: 1em}
-article {padding: 1em 0; border-bottom: 1px solid #ddd}
-
-#header {margin:auto; padding:1em; text-align:center; animation: fromup 1.5s}
+/** imporant styles here */
+body {max-width:35em; margin:auto;
+  font:18px/1.4 "Droid Sans","Helvetica Neue",Helvetica,sans-serif}
+#header {text-align:center; animation:fromup 1.5s}
+@keyframes fromup {
+   0% {transform:translateY(-25px); opacity:0}
+  33% {transform:translateY(-25px); opacity:0} to {} }
 #header > a:before {content:""; display:inline-block;
-  background-image: url(/avatar.png); width:48px; height:48px; transform:scale(1.8); margin: 1em;}
-#header > a {padding:1em; display:inline-block;}
-#header > a > h1 {font-size:1.5em;}
-#header > a > span {color: #aaa; font-size:1em;}
-#header {} @keyframes fromup {
-   0% {transform: translateY(-25px); opacity: 0}
-  33% {transform: translateY(-25px); opacity: 0} to {} }
+  background-image: url(/avatar.png); width:48px; height:48px; transform:scale(1.8); margin:1em}
 
-#menu {width:50%; margin:auto; padding:0; border-top: 1px solid #ddd;}
-#menu > li {display: inline;}
-#menu a {display: inline-block; padding: .5em}
-
-a {text-decoration: none; color: #8b0} a:visited {color: #674}
-a:hover, a:focus {color: #0ad; text-decoration: underline}
-.playing {color: #000}
+#menu {width:50%; margin:auto; padding:0}
+#menu > li {display:inline}
+#menu a {display:inline-block; padding:.5em}
   </style>
+  <link rel=stylesheet async href="http://drcicero.github.io/style.css">
 
 </head><body>
   <header id=header>
-    <a href=drcicero.github.io><h1>DrCicero</h1><span>Hobby Gamedev</span></a>
-    <ul id=menu><li><a href=http://drcicero.github.io/>Home</a></li><li><a href=http://drcicero.github.io/feed.atom>Feed</a></li><li><a href=http://drcicero.github.io/music.html>Music</a></li></ul>
+    <a href=http://drcicero.github.io/><h1>DrCicero</h1><span>Hobby Gamedev</span></a>
+    <ul id=menu><li><a href=http://drcicero.github.io/>Home</a></li><li><a href=http://drcicero.github.io/games/index.html>Games</a></li><li><a href=http://drcicero.github.io/music.html>Music</a></li><li><a href=http://drcicero.github.io/feed.atom>Feed</a></li></ul>
   </header>
-  <small>Last updated: <date date=2015-03-11T23:00:14Z>11 Mar 2015</date></small>
 
-<article>
-  <a href="http://drcicero.github.io/music.html"><h1>Music uploaded</h1></a><small><date date="2015-03-11T22:58:57Z">11 Mar 2015</date></small>
-  <p>now you can enjoy 60 min of original music by me.</p>
-</article>
-<article>
-  <a href="http://flavio.tordini.org/minitube"><h1>Linux App: Minitube</h1></a><small><date date="2015-03-11T11:00:11Z">11 Mar 2015</date></small>
+  <h1>Home</h1>
+  <article id="2015-03-11T22:58:57Z">
+  <h1 id="2015-03-11T22:58:57Z"><a href="http://drcicero.github.io/music.html">Music uploaded</a></h1>
+  <p>now you can enjoy 60 min of original music.</p>
+<small style="display:block"><date date="2015-03-11T22:58:57Z">11 Mar 2015</date></small></article>
+<article id="2015-03-10T11:00:11Z">
+  <h1 id="2015-03-10T11:00:11Z"><a href="http://flavio.tordini.org/minitube">Linux App: Minitube</a></h1>
   <p>is a tool for watching youtube without flash or html5.</p>
-</article>
-<article>
-  <a href="http://www.love2d.org"><h1>Game Engine: Love2d</h1></a><small><date date="2015-03-11T22:00:00Z">11 Mar 2015</date></small>
+<small style="display:block"><date date="2015-03-10T11:00:11Z">10 Mar 2015</date></small></article>
+<article id="2015-03-09T22:00:00Z">
+  <h1 id="2015-03-09T22:00:00Z"><a href="http://www.love2d.org">Game Engine: Love2d</a></h1>
   <p>is a wonderful engine for lua based 2d games, that i have to recommend!</p>
-</article>
-<article>
-  <a href="http://tboneiss.itch.io/hatcat"><h1>Puzzle: Hat Cat</h1></a><small><date date="2015-03-10T20:00:00Z">10 Mar 2015</date></small>
+<small style="display:block"><date date="2015-03-09T22:00:00Z">09 Mar 2015</date></small></article>
+<article id="2015-03-08T20:00:00Z">
+  <h1 id="2015-03-08T20:00:00Z"><a href="http://tboneiss.itch.io/hatcat">Puzzle: Hat Cat</a></h1>
   <p>and the obvious crimes against the fundamental laws of physics is a mind-boggling 2d puzzle game about space-loops, powered by love2d.</p>
-</article>
-<article>
-  <a href="http://tangramgames.dk/games/sienna/"><h1>One Button: Sienna</h1></a><small><date date="2015-03-09T23:00:00Z">09 Mar 2015</date></small>
+<small style="display:block"><date date="2015-03-08T20:00:00Z">08 Mar 2015</date></small></article>
+<article id="2015-03-07T23:00:00Z">
+  <h1 id="2015-03-07T23:00:00Z"><a href="http://tangramgames.dk/games/sienna/">One Button: Sienna</a></h1>
   <p>by tangram is a fast-paced one button runner and made with the awesome love2d engine!</p>
-</article>
-<article>
-  <a href="http://www.newgrounds.com/portal/view/644696"><h1>Flash Adventure: Phoenotopia</h1></a><small><date date="2015-03-08T19:00:00Z">08 Mar 2015</date></small>
+<small style="display:block"><date date="2015-03-07T23:00:00Z">07 Mar 2015</date></small></article>
+<article id="2015-03-06T19:00:00Z">
+  <h1 id="2015-03-06T19:00:00Z"><a href="http://www.newgrounds.com/portal/view/644696">Flash Adventure: Phoenotopia</a></h1>
   <p>is a free fun action puzzle platformer with a cool story! (took me quite some time to finish.)</p>
-</article>
-<article>
-  <h1>Welcome,</h1><small><date date="2015-03-07T20:00:00Z">07 Mar 2015</date></small>
+<small style="display:block"><date date="2015-03-06T19:00:00Z">06 Mar 2015</date></small></article>
+<article id="2015-03-05T20:00:00Z">
+  <h1 id="2015-03-05T20:00:00Z">Welcome,</h1>
   <p>i am drcicero and this is my micro-blog. From time to time i am going to write a post. Mostly these will consist of links or other forms of recommendations.</p>
   <p>Be sure to subscribe using your favorite rss/atom reader.</p>
-</article>
+  <p></p>
+<small style="display:block"><date date="2015-03-05T20:00:00Z">05 Mar 2015</date></small></article>
 
 
+  <small>Last updated: <date date=2015-03-18T13:01:57Z>18 Mar 2015</date></small>
   <script async>
 (function () {"use strict";
   var mus = new Audio();
@@ -75,13 +70,11 @@ a:hover, a:focus {color: #0ad; text-decoration: underline}
       var musics = document.getElementsByClassName("playing");
       for (var i=0; i<musics.length; i++) musics[i].classList.remove("playing");
       mus.src = this.href;
-      this.classList.add("playing");
-      mus.play();
+      mus.play(); this.classList.add("playing");
 
-    } else {
-      if (mus.paused || mus.ended) {mus.play(); this.classList.add("playing");}
-      else {mus.pause(); this.classList.remove("playing");}
-    }
+    } else if (mus.paused || mus.ended) {mus.play(); this.classList.add("playing");}
+    else {mus.pause(); this.classList.remove("playing");}
+
     return false;
   }
 

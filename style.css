@@ -1,0 +1,15 @@
+html {background:#222} body {background:#fff; padding:0 2em}
+article {padding:1em 0; border-bottom:1px solid #ddd}
+h1 {padding:0; margin:0; font-weight:bold; font-size:1.5em}
+small {opacity:.5; font-size:1em}
+a {text-decoration:none; color:#8b0} a:visited {color:#674}
+a:hover, a:focus {color:#0ad; text-decoration:underline}
+.playing {color:#000}
+
+#header {margin:auto; padding:1em}
+#header > a {padding:1em; display:inline-block}
+#header > a > h1 {font-size:1.5em}
+#header > a > span {color:#aaa; font-size:1em}
+#menu {border-top:1px solid #ddd}
+
+.half-float {width:50%; float:left;}

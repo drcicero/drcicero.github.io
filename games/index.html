@@ -1,0 +1,61 @@
+<!doctype html>
+<html><head>
+  <meta charset=utf-8>
+  <title>Games - drcicero</title>
+  <link rel="shortcut icon" href="http://drcicero.github.io/avatar.png">
+
+  <style>
+/** imporant styles here */
+body {max-width:35em; margin:auto;
+  font:18px/1.4 "Droid Sans","Helvetica Neue",Helvetica,sans-serif}
+#header {text-align:center; animation:fromup 1.5s}
+@keyframes fromup {
+   0% {transform:translateY(-25px); opacity:0}
+  33% {transform:translateY(-25px); opacity:0} to {} }
+#header > a:before {content:""; display:inline-block;
+  background-image: url(/avatar.png); width:48px; height:48px; transform:scale(1.8); margin:1em}
+
+#menu {width:50%; margin:auto; padding:0}
+#menu > li {display:inline}
+#menu a {display:inline-block; padding:.5em}
+  </style>
+  <link rel=stylesheet async href="http://drcicero.github.io/style.css">
+
+</head><body>
+  <header id=header>
+    <a href=http://drcicero.github.io/><h1>DrCicero</h1><span>Hobby Gamedev</span></a>
+    <ul id=menu><li><a href=http://drcicero.github.io/>Home</a></li><li><a href=http://drcicero.github.io/games/index.html>Games</a></li><li><a href=http://drcicero.github.io/music.html>Music</a></li><li><a href=http://drcicero.github.io/feed.atom>Feed</a></li></ul>
+  </header>
+
+  <h1>Games</h1>
+  
+  <div><ul>
+  <li><a href="http://drcicero.github.io/games/ld-30-taxi-space">ld-30-taxi-space</a></li>
+  <li><a href="http://drcicero.github.io/games/panzer">panzer</a></li>
+</ul></div>
+
+
+  <small>Last updated: <date date=2015-03-18T13:01:57Z>18 Mar 2015</date></small>
+  <script async>
+(function () {"use strict";
+  var mus = new Audio();
+
+  function toggle(e) {
+    if (mus.getAttribute("src") !== this.href) {
+      var musics = document.getElementsByClassName("playing");
+      for (var i=0; i<musics.length; i++) musics[i].classList.remove("playing");
+      mus.src = this.href;
+      mus.play(); this.classList.add("playing");
+
+    } else if (mus.paused || mus.ended) {mus.play(); this.classList.add("playing");}
+    else {mus.pause(); this.classList.remove("playing");}
+
+    return false;
+  }
+
+  var musics = document.getElementsByClassName("music-link");
+  for (var i=0; i<musics.length; i++)
+    musics[i].onclick = toggle;
+})();
+  </script>
+</body></html>

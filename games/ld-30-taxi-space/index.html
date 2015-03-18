@@ -1,0 +1,486 @@
+<!doctype html>
+<head><meta charset=utf-8>
+<title>LD30 Connected Worlds - DrCicero</title>
+<style>body {margin:auto;width:640px;background:black;color:#999; font: 16px/1.4 "Droid Sans",sans-serif;margin-top:1em;} h1 {font-family: Silkscreen;margin:0;} p {margin: .8em 0} strong {color: #fff}
+@font-face { font-family: Silkscreen; src: url(slkscr.ttf); }
+</style>
+
+</head><body>
+<audio id=music autoplay loop src=music.mp3></audio>
+<canvas id=canvas width=640px height=320px></canvas>
+<noscript style=display:block;text-align:center;font-size:1.5em;>Please enable Javascript!</noscript>
+
+<h1>Taxi Space</h1>
+<p>by DrCicero for <a href=http://www.ludumdare.com/compo/ludum-dare-30/?action=preview>LD30 Connected Worlds</a></p>
+<p>Movement: <strong>Arrow keys</strong>, Shield: <strong>C</strong></p>
+<p>You are a space taxi driver. Everyone is waiting for you. <strong>Drive to the blue target</strong> and <strong>slow below speed 3</strong> to let the customers enter and leave your ship.</p>
+<p><strong>Don't let your warpbubble touch another</strong> or you are dead.</p>
+<p>How many customers can you safely drive to their target world?</p>
+<p>No plugins - Yeah! Web HTML5 Canvas</p>
+
+<script>(function () {
+"use strict";
+
+var canvas = document.getElementById("canvas");
+window.ctx = canvas.getContext("2d");
+ctx.imageSmoothingEnabled = false;
+ctx.mozImageSmoothingEnabled = false;
+ctx.webkitImageSmoothingEnabled = false;
+var now = Date.now;
+
+var text, worlds, stars, ships, target, customers, keys, RUNNING, spacetimer, THEN, integrity, shield, hittimer;
+
+function load () {
+  document.getElementById("music").play();
+
+  RUNNING = false;
+  THEN = undefined;
+  integrity = 1;
+  shield = 1;
+  hittimer = 0;
+
+  spacetimer = 0;
+  text = [
+[["ME","zzzZZZ"],
+["???", "Hey, WAKEUP!"],
+["ME","Who are you?"],
+["???","Argh! Don't give me this »i lost my memory","- i dont know who i am« again."],
+["???","This is your last chance, if you slack of ONCE","more YOUR FIRED."],
+["ME","Ok, Boss..."],
+["BOSS","You got a passenger!"],
+["BOSS","Drive to the blue target world and slow down","below speed 3..."],
+["BOSS", "... to let the customers beam up to your","ship. Got it?"],
+["ME","Ok, Boss:","Blue Target on Minimap, below speed 3."],
+["BOSS","GO! Use the arrow keys."]],
+
+[["PASSENGER", "Hello!"],
+["ME", "Where to?"],
+["PASSENGER", "Drive me to P-X8K3, its marked blue","on your minimap"],
+["PASSENGER","Then please slow down below speed 3","again, so i can leave."],
+["ME","Oh, there is another taxi flying around.","I have to watch out."],
+["ME","Better not crash into each other..."],
+["PASSENGER", "What are you waiting for?"]],
+
+[["PASSENGER","OKTHXBYE"],
+["ME","zzzZZZ"],
+["BOSS","Lucky you! There was another passenger","waiting on that planet."],
+["ME",":-("],
+["PASSENGER","To P-Z3K29"],
+["BOSS","Plan your route ahead with the minimap,","so you dont crash into another ship."],
+["BOSS","If you see someone crossing your path, then ..."],
+["BOSS","... don't drive too fast. If your warpbubble hits","another you are both dead."]],
+
+[["PASSENGER","Here take this $ 100."],
+["ME","Thanks."],
+["BOSS","Remember you only get $ 1, the rest is for me.","xD"],
+["ME",">:("],
+["NEW PASSENGER","Take me to P-A84Z38."],
+["BOSS","One note: If you are about to hit another ship","press c for a short shield."],
+["BOSS","Call me when you have $ 1000."],
+["ME","..."],],
+
+[["ME","...","It was a pleasure driving you."],
+["PASSENGER","Bye"],
+["ME","Hey, the money!"],
+["PASSENGER","Oh, i forgot."],
+["NEW PASSENGER","TAXI! Oh, hi. Please take me to P-U83B21"]],
+
+[["NEW PASSENGER","Hello, drive me to P-K372B23.","Now. Fast."]],
+
+[["ME","Fast enough?"],
+["PASSENGER","What are you talking about?"],
+["ME","The fast driving extra pay!"],
+["PASSENGER","I expect every taxi drive to be fast."],
+["ME","..."],
+["NEW PASSENGER","To P-T83B23"]],
+
+[["PASSENGER","$ 50, yes?"],
+["ME","No $ 100!"],
+["PASSENGER","Ooops."],
+["ME","Getting closer to $ 1000!",":-)"],
+["NEW PASSENGER","To P-Q9Y0"]],
+
+[["ME","Where do all those Passenger come from?","Normally everyone uses the interspace portals."],
+["ME", "Hey, you - yes you.","Ever heard of the interspace portals?"],
+["PASSENGER", "Sure..."],
+["ME", "You know, there much faster, cheaper", "and more comfortable than a space taxi!"],
+["PASSENGER", "Arent you supposed to drive me?"],
+["ME", "No, err - yes. But why dont you just","use them and leave me alone? ..."]],
+
+[["PASSENGER", "About the portals... Didn't you watch the news?"],
+["ME", "???","Driving and watching is still not allowed."],
+["ME", "Or do you want to die?"],
+["PASSENGER", "Ok, i just tell you: Some hacker brought","the whole portal system down."],
+["ME", "WHAT!?!?!?!!11eleven"]],
+
+[["ME","Hey Boss, i just made $ 1000!"],
+["BOSS","Really? I didn't expect that much from you."],
+["ME","But you said, i should call you?"],
+["BOSS","Ah, yes of course... What did i say?"],
+["ME","You said, if i make $ 1000, i get a free day!"],
+["BOSS","Yeah, sure.","IDIOT! GO WORK."]],
+
+[["PASSENGER","To P-K37U38"]],
+
+[["PASSENGER","Take me to P-K38A3"],
+["ME","Okay"],
+["PASSENGER","Im investingating the portal collapse,","so make it fast."]],
+
+[["Detective","Wait until i return"],
+["ME","Hm..."],
+["ME","Isnt this my boss's home planet?"],
+["BOSS","Huh, you here?"],
+["BOSS","Quick drive me to P-K38R3"]],
+
+[["BOSS","See you later."],
+["ME","Strange..."],
+["DETECTIVE","*Beep* Hey! I wanted you to wait for me."],
+["DETECTIVE","Pick me up at P-3938"]],
+
+[["DETECTIVE","Strange, have you seen your boss?","He wasn't at his office."],
+["ME","Oh, how suspicious!"],
+["ME","He is at P-K238A235."],
+["DETECTIVE","Take me to him!"]],
+
+[["DETECIVE","Im going to arrest you for","your involvement in the portal collapse."],
+["BOSS","NOOOO - What have you done!"],
+["ME","Cool! Finally i get some rest!"],
+["NEW PASSENGER","Hey, you. I kind of like driving in taxis","instead of using portals."],
+["ME","NOOOOOO!", ":("]],
+  ];
+  window.text = text;
+
+  keys = {};
+  for (var k in keymap) keys[keymap[k]] = 0;
+
+  customers = 0;
+  ctx.font = "17px/1.2 Silkscreen"
+  window.player = {x:0, y:0, w:30, h:60, va:0, vl:0, a:0};
+
+  worlds = [];
+  for (var i=0; i<8; i++)
+    worlds.push({
+      x: (Math.random()-.5)*6000,
+      y: (Math.random()-.5)*6000,
+      s: Math.random()*50+400,
+    });
+
+  ships = [];
+
+  stars = [];
+  for (var i=0; i<100; i++)
+    stars.push({x:Math.random()*canvas.width*4, y:Math.random()*canvas.width*4, z:Math.random()*.8+.1});
+
+  target = nextTarget(worlds[0]);
+}
+
+function nextTarget(current) {
+  var result = Math.floor(Math.random() * (worlds.length - 1));
+  return worlds[result >= worlds.indexOf(current) ? result + 1 : result];
+}
+
+function dist (x, y) { return Math.sqrt(x*x + y*y); }
+function mod (n, m) { return ((n % m) + m) % m; }
+
+function tick () {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  ctx.save();
+    var z = 1 - Math.abs(player.vl)/10 * .8;
+
+    ctx.translate(canvas.width/2, canvas.height/2);
+    ctx.rotate(-player.a);
+    ctx.scale(z, z);
+    ctx.translate(-player.x, -player.y);
+
+    ctx.fillStyle = "white";
+    stars.forEach(tickStar);
+
+    ctx.fillStyle = "green";
+    worlds.forEach(drawPlanet);
+
+    ctx.fillStyle = "orange";
+    ctx.strokeStyle = "orange";
+    ships.forEach(tickShip);
+    tickPlayer(player);
+
+    ctx.strokeStyle = "blue";
+    fillMsg(target);
+  ctx.restore();
+
+  if (!RUNNING) drawBox();
+  else          drawHUD();
+
+  requestAnimationFrame(tick);
+}
+
+function drawBox () {
+  ctx.fillStyle = "#111";
+  ctx.fillRect(0, canvas.height - 120, canvas.width, 120);
+
+  ctx.strokeStyle = "white";
+  ctx.strokeRect(10, canvas.height - 110, 100, 100);
+
+  var t = text[0][0];
+  ctx.fillStyle = "#888";
+  ctx.fillText(t[0], 120, canvas.height - 85);
+  ctx.fillStyle = "#eee";
+  ctx.fillText(t[1], 120, canvas.height - 65);
+  if (t[2]) ctx.fillText(t[2], 120, canvas.height - 45);
+
+  if (--spacetimer < -25) {
+    ctx.fillStyle = "#888";
+    ctx.fillText("[space to continue]", 400, canvas.height - 25);
+
+    ctx.fillStyle = "#444";
+    ctx.fillText("[enter to skip]", 450, canvas.height - 10);
+
+    if (keys.space) {
+      new Audio("snd1.mp3").play();
+      keys.space = 0;
+
+      spacetimer = 0;
+      if (text[0].length > 1) {
+        text[0].shift();
+
+      } else {
+        text.shift();
+        if (THEN) THEN();
+        else      RUNNING = true;
+      }
+
+    } else if (keys.enter) {
+      new Audio("snd1.mp3").play();
+      keys.enter = 0;
+      spacetimer = 0;
+
+      text.shift();
+      if (THEN) THEN();
+      else      RUNNING = true;
+
+    }
+  }
+}
+function drawHUD () {
+  // pointer
+  var a = Math.atan2(target.y - player.y, target.x - player.x) - player.a;
+  ctx.fillStyle = "blue";
+  ctx.fillRect(
+    100 * Math.cos(a) + canvas.width/2,
+    100 * Math.sin(a) + canvas.height/2,
+    3, 3);
+  ctx.fillRect(
+    98 * Math.cos(a-.03) + canvas.width/2,
+    98 * Math.sin(a-.03) + canvas.height/2,
+    3, 3);
+  ctx.fillRect(
+    98 * Math.cos(a+.03) + canvas.width/2,
+    98 * Math.sin(a+.03) + canvas.height/2,
+    3, 3);
+
+  // minimap
+  ctx.save();
+    ctx.translate(canvas.width - 60, 60);
+
+    ctx.strokeStyle = "white";
+    ctx.strokeRect(-50, -50, 100, 100);
+
+    ctx.fillStyle = "black";
+    ctx.fillRect(-50, -50, 100, 100);
+
+    ctx.scale(.0125, .0125);
+    ctx.rotate(-player.a);
+    ctx.translate(-player.x, -player.y);
+
+    ctx.fillStyle = "green";
+    worlds.forEach(drawPlanet);
+
+    ctx.strokeStyle = "blue";
+    ctx.lineWidth = 100;
+
+    fillMsg(target);
+
+    ctx.fillStyle = "orange";
+        for (var i=0; i<ships.length; i++)
+      ctx.fillRect(ships[i].x,ships[i].y,200,200);
+
+    ctx.fillStyle = "blue";
+    ctx.fillRect(player.x,player.y,200,200);
+  ctx.restore();
+
+  // text
+  ctx.fillStyle = "white";
+  ctx.fillText("$ " + customers*100, canvas.width - 110, 130);
+
+  ctx.fillStyle = Math.abs(player.vl) >= 3 ? "white" : "#888";
+  ctx.fillText("Speed: " +~~(Math.abs(player.vl)*10)/10, canvas.width - 110, 150);
+
+  ctx.fillStyle = integrity >= 1 ? "white" : integrity >= .6 ? "yellow" : "red";
+  ctx.fillText("Hull: " + ~~(integrity*10)/10, canvas.width - 110, 170);
+
+  ctx.fillStyle = shield >= 1 ? "white" : "#888";
+  ctx.fillText("Shield: " + ~~(shield*10)/10, canvas.width - 110, 190);
+}
+
+
+var planet = new Image();
+planet.src = "planet.png";
+function drawPlanet(o) {
+  ctx.drawImage(planet, o.x-o.s/2, o.y-o.s/2, o.s, o.s);
+}
+
+function fillMsg (o) {
+  ctx.beginPath();
+  var u = now() % 1000 / 1000;
+  ctx.arc(o.x, o.y, 100 + u*400, 0, Math.PI*2);
+  ctx.stroke();
+}
+
+var tileset = new Image();
+tileset.src = "ships.png";
+var tw = 11, th = 20;
+
+function fillRect (o) {
+  ctx.save();
+  ctx.translate(o.x, o.y);
+  ctx.rotate(o.a);
+  ctx.translate(-o.w/2, -o.h/2);
+
+  ctx.fillRect(0, 0, o.w, o.h);
+
+  ctx.restore();
+}
+function speedRect (o) {
+  ctx.save();
+    ctx.translate(o.x, o.y);
+    ctx.rotate(o.a + (o !== player ? Math.PI/2 : 0));
+    ctx.drawImage(tileset, 0,0, 11,20, -o.w/2,-o.h/2, o.w, o.h);
+
+    if (o !== player || hittimer === 0 ) {
+      ctx.beginPath();
+      ctx.arc(0, 0, warpBubble(o.vl), 0, Math.PI*2);
+      ctx.stroke();
+    }
+  ctx.restore();
+}
+function warpBubble (l) {
+  l = Math.max(Math.abs(l) - 2, 0);
+  return l * l * 2;
+}
+
+function tickPlayer(o) {
+  speedRect(o)
+
+  if (RUNNING) {
+    o.warpBubble = warpBubble(o.vl);
+    o.va *= .9;
+    o.va += .005  * (keys.right - keys.left) * (100-o.vl*o.vl)/100;
+    o.a += o.va;
+
+    o.vl *= .99;
+    o.vl += .1  * (keys.down - keys.up);
+
+    o.x += o.vl * Math.cos(o.a + Math.PI/2);
+    o.y += o.vl * Math.sin(o.a + Math.PI/2);
+
+    if (shield < 1) shield += 0.005;
+    if (shield >= 1 && keys.c) {
+      shield = 0;
+      hittimer = 100;
+    }
+    if (integrity < 1) integrity += .0005;
+    if (hittimer > 0) hittimer -= 1;
+
+    if (Math.abs(o.vl) < 3 && dist(target.x-o.x, target.y-o.y) < 200) {
+      new Audio("snd1.mp3").play();
+      spawnShip();
+      target = nextTarget(target);
+      customers += 1;
+
+      if (text.length > 0)
+        RUNNING = false;
+    }
+
+  }
+}
+
+function spawnShip() {
+  var t = nextTarget(target);
+  ships.push({x:t.x, y:t.y, target:nextTarget(t), w:20+Math.random()*20, h:30+Math.random()*30, vl:0});
+}
+window.spawnShip = spawnShip;
+
+function tickStar (s) {
+  if (s.x < player.x - canvas.width*2)
+    s.x += canvas.width*4;
+
+  if (s.x > player.x + canvas.width*2)
+    s.x -= canvas.width*4;
+
+  if (s.y < player.y - canvas.width*2)
+    s.y += canvas.width*4;
+
+  if (s.y > player.y + canvas.width*2)
+    s.y -= canvas.width*4;
+
+  ctx.fillRect(s.x, s.y, 4*s.z, 4*s.z);
+}
+
+function tickShip (o) {
+  speedRect(o)
+
+  if (RUNNING) {
+    var targetdist = dist(o.target.x - o.x, o.target.y - o.y);
+
+    o.a = Math.atan2(o.target.y - o.y, o.target.x - o.x);
+    o.vl = targetdist<700 ? targetdist/700*8 : o.vl + 0.025 * (8 - o.vl);
+
+    o.x += o.vl * Math.cos(o.a);
+    o.y += o.vl * Math.sin(o.a);
+
+    if (hittimer === 0 && player.warpBubble && dist(o.x - player.x, o.y - player.y) < warpBubble(o.vl) + player.warpBubble) {
+
+      RUNNING = false;
+      if (integrity >= .6) {
+        var tmp = text;
+        hittimer = 100;
+        integrity -= .6;
+        text = [[["ME", "WOA! I took a hit!","At least my hull integrity is still above 0."]]];
+
+        THEN = function () {
+          text = tmp;
+          RUNNING = true;
+        }
+
+      } else {
+        document.getElementById("music").pause();
+        text = [[["ME", "OMG! The two warpbubbles connected and", "an interdimensional rift opened."],["ME", "Everyone dies. Wait no - it was","just a dream..."]]];
+        THEN = function () {
+          load()
+        };
+      }
+    }
+
+    if (targetdist < 100)
+      o.target = nextTarget(o.target);
+  }
+}
+
+var keymap = {
+  13: "enter", 16: "shift", 32: "space",
+  37: "left", 38: "up", 39: "right", 40: "down",
+  67: "c", 88: "x",
+};
+window.onkeydown = function(e) {
+  var x = keymap[e.keyCode];
+  if (x) {
+    keys[x] = 1;
+    e.preventDefault();
+  }
+}
+window.onkeyup = function(e) { keys[keymap[e.keyCode]] = 0; }
+
+load();
+tick();
+
+})()</script>

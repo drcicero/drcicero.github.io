@@ -1,42 +1,38 @@
 <!doctype html>
 <html><head>
   <meta charset=utf-8>
-  <title>DrCicero</title>
+  <title>Music - drcicero</title>
+  <link rel="shortcut icon" href="http://drcicero.github.io/avatar.png">
+
   <style>
-html {background: #222} body {max-width: 35em; margin: auto; padding: 0 2em;
-  font: 18px/1.4 "Droid Sans","Helvetica Neue",Helvetica,sans-serif; background: #fff}
-h1 {padding:0; margin:0; font-weight: bold; font-size: 1.5em}
-small {opacity: .5; font-size: 1em}
-article {padding: 1em 0; border-bottom: 1px solid #ddd}
-
-#header {margin:auto; padding:1em; text-align:center; animation: fromup 1.5s}
+/** imporant styles here */
+body {max-width:35em; margin:auto;
+  font:18px/1.4 "Droid Sans","Helvetica Neue",Helvetica,sans-serif}
+#header {text-align:center; animation:fromup 1.5s}
+@keyframes fromup {
+   0% {transform:translateY(-25px); opacity:0}
+  33% {transform:translateY(-25px); opacity:0} to {} }
 #header > a:before {content:""; display:inline-block;
-  background-image: url(/avatar.png); width:48px; height:48px; transform:scale(1.8); margin: 1em;}
-#header > a {padding:1em; display:inline-block;}
-#header > a > h1 {font-size:1.5em;}
-#header > a > span {color: #aaa; font-size:1em;}
-#header {} @keyframes fromup {
-   0% {transform: translateY(-25px); opacity: 0}
-  33% {transform: translateY(-25px); opacity: 0} to {} }
+  background-image: url(/avatar.png); width:48px; height:48px; transform:scale(1.8); margin:1em}
 
-#menu {width:50%; margin:auto; padding:0; border-top: 1px solid #ddd;}
-#menu > li {display: inline;}
-#menu a {display: inline-block; padding: .5em}
-
-a {text-decoration: none; color: #8b0} a:visited {color: #674}
-a:hover, a:focus {color: #0ad; text-decoration: underline}
-.playing {color: #000}
+#menu {width:50%; margin:auto; padding:0}
+#menu > li {display:inline}
+#menu a {display:inline-block; padding:.5em}
   </style>
+  <link rel=stylesheet async href="http://drcicero.github.io/style.css">
 
 </head><body>
   <header id=header>
-    <a href=drcicero.github.io><h1>DrCicero</h1><span>Hobby Gamedev</span></a>
-    <ul id=menu><li><a href=http://drcicero.github.io/>Home</a></li><li><a href=http://drcicero.github.io/feed.atom>Feed</a></li><li><a href=http://drcicero.github.io/music.html>Music</a></li></ul>
+    <a href=http://drcicero.github.io/><h1>DrCicero</h1><span>Hobby Gamedev</span></a>
+    <ul id=menu><li><a href=http://drcicero.github.io/>Home</a></li><li><a href=http://drcicero.github.io/games/index.html>Games</a></li><li><a href=http://drcicero.github.io/music.html>Music</a></li><li><a href=http://drcicero.github.io/feed.atom>Feed</a></li></ul>
   </header>
-  <small>Last updated: <date date=2015-03-11T23:00:14Z>11 Mar 2015</date></small>
 
-<section>
-  <h1>Music</h1><p>The following works by David R. are lincenced  under a CC BY SA 4 Licence.</p><p>This means, if you want to use its for example in a movie or a game, please refer to 'DrCicero', 'David R.' or to the site  'drcicer.github.io'. Even better would be to do all three things!</p><ul>
+  <h1>Music</h1>
+  
+  <div><p>The following works by David R. are licenced under a CC BY SA 4 Licence.</p></div>
+  <div><p>This means, if you want to use its for example in a movie or a game, please refer to 'DrCicero', 'David R.' or to the site  'drcicer.github.io'. Even better would be to do all three things!</p></div>
+  <div><div class="half-float">
+  <h2 style="font-size:1em">0 - 10</h2><ul>
   <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/01 - new.mp3">
   01 - new <small>1:41</small></a>
 </li>
@@ -67,6 +63,9 @@ a:hover, a:focus {color: #0ad; text-decoration: underline}
   <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/10 - roko.mp3">
   10 - roko <small>1:44</small></a>
 </li>
+</ul></div>
+<div class="half-float">
+  <h2 style="font-size:1em">10 - 20</h2><ul>
   <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/11 - long.mp3">
   11 - long <small>2:43</small></a>
 </li>
@@ -97,6 +96,9 @@ a:hover, a:focus {color: #0ad; text-decoration: underline}
   <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/20 - room2.mp3">
   20 - room2 <small>0:28</small></a>
 </li>
+</ul></div>
+<div class="half-float">
+  <h2 style="font-size:1em">20 - 30</h2><ul>
   <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/21 - thinking2.mp3">
   21 - thinking2 <small>0:24</small></a>
 </li>
@@ -127,6 +129,9 @@ a:hover, a:focus {color: #0ad; text-decoration: underline}
   <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/30 - try_again.mp3">
   30 - try_again <small>0:41</small></a>
 </li>
+</ul></div>
+<div class="half-float">
+  <h2 style="font-size:1em">30 - 40</h2><ul>
   <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/31 - birthday.mp3">
   31 - birthday <small>0:15</small></a>
 </li>
@@ -157,6 +162,9 @@ a:hover, a:focus {color: #0ad; text-decoration: underline}
   <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/40 - whistling0_5.mp3">
   40 - whistling0_5 <small>0:23</small></a>
 </li>
+</ul></div>
+<div class="half-float">
+  <h2 style="font-size:1em">40 - 50</h2><ul>
   <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/41 - still.mp3">
   41 - still <small>0:44</small></a>
 </li>
@@ -187,6 +195,9 @@ a:hover, a:focus {color: #0ad; text-decoration: underline}
   <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/50 - raw.mp3">
   50 - raw <small>0:57</small></a>
 </li>
+</ul></div>
+<div class="half-float">
+  <h2 style="font-size:1em">50 - 60</h2><ul>
   <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/51 - march.mp3">
   51 - march <small>1:33</small></a>
 </li>
@@ -217,6 +228,9 @@ a:hover, a:focus {color: #0ad; text-decoration: underline}
   <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/60 - through time.mp3">
   60 - through time <small>1:32</small></a>
 </li>
+</ul></div>
+<div class="half-float">
+  <h2 style="font-size:1em">60 - 70</h2><ul>
   <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/61 - pool of shade.mp3">
   61 - pool of shade <small>0:30</small></a>
 </li>
@@ -247,15 +261,21 @@ a:hover, a:focus {color: #0ad; text-decoration: underline}
   <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/B7 - Beach.mp3">
   B7 - Beach <small>0:18</small></a>
 </li>
+</ul></div>
+<div class="half-float">
+  <h2 style="font-size:1em">70 - 80</h2><ul>
   <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/S1 - Herbst.mp3">
   S1 - Herbst <small>0:29</small></a>
 </li>
   <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/S2 - quirky.mp3">
   S2 - quirky <small>0:36</small></a>
 </li>
-</ul></section>
+</ul></div>
+</div>
+  <div><div style=clear:both></div></div>
 
 
+  <small>Last updated: <date date=2015-03-18T13:01:57Z>18 Mar 2015</date></small>
   <script async>
 (function () {"use strict";
   var mus = new Audio();
@@ -265,13 +285,11 @@ a:hover, a:focus {color: #0ad; text-decoration: underline}
       var musics = document.getElementsByClassName("playing");
       for (var i=0; i<musics.length; i++) musics[i].classList.remove("playing");
       mus.src = this.href;
-      this.classList.add("playing");
-      mus.play();
+      mus.play(); this.classList.add("playing");
 
-    } else {
-      if (mus.paused || mus.ended) {mus.play(); this.classList.add("playing");}
-      else {mus.pause(); this.classList.remove("playing");}
-    }
+    } else if (mus.paused || mus.ended) {mus.play(); this.classList.add("playing");}
+    else {mus.pause(); this.classList.remove("playing");}
+
     return false;
   }
 
