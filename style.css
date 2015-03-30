@@ -7,9 +7,11 @@ a:hover, a:focus {color:#0ad; text-decoration:underline}
 .playing {color:#000}
 
 #header {margin:auto; padding:1em}
-#header > a {padding:1em; display:inline-block}
+#header > a {padding:1em; display:inline-block;border-bottom:1px solid #ddd}
 #header > a > h1 {font-size:1.5em}
 #header > a > span {color:#aaa; font-size:1em}
-#menu {border-top:1px solid #ddd}
 
 .half-float {width:50%; float:left;}
+
+article h1 {font-size:1em;display:inline}
+article p {display:inline}
