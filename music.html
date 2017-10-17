@@ -6,14 +6,13 @@
   <link rel="alternate" type="application/atom+xml" href="https://drcicero.github.io/feed.atom" title="Atom Feed">
 
   <style>
-/** imporant styles here */
-body {max-width:35em; margin:auto;
-  font:16px/1.5 "Droid Sans","Helvetica Neue",Helvetica,sans-serif}
-#header {text-align:center; animation:fromup 1.5s}
-@keyframes fromup {
-   0% {transform:translateY(-25px); opacity:0}
-  33% {transform:translateY(-25px); opacity:0} to {} }
+/* important styles here */
+body {max-width:35em; min-height:100vh; margin:auto;
+  font:16px/1.5 "Roboto","Helvetica Neue",Helvetica,sans-serif}
+#header {text-align:center; animation:fromup 1s}
+/*@keyframes fromup { 0% {transform:translateY(-5px); opacity:.5} to {} }*/
 #header > a:before {content:""; display:inline-block;
+  image-rendering: -moz-crisp-edges; image-rendering: pixelated;
   background-image: url(/avatar.png); width:48px; height:48px; transform:scale(1.8); margin:1em}
 
 #menu {margin:auto; padding:0}
@@ -24,259 +23,429 @@ body {max-width:35em; margin:auto;
 
 </head><body>
   <header id=header>
-    <a href=https://drcicero.github.io/><h1>DrCicero</h1><span>Hobby Gamedev</span></a>
-    <ul id=menu><li><a href=https://drcicero.github.io/>Home</a></li><li><a href=https://drcicero.github.io/games/index.html>Games</a></li><li><a href=https://drcicero.github.io/music.html>Music</a></li><li><a href=https://drcicero.github.io/feed.atom>Feed</a></li></ul>
+    <a href=https://drcicero.github.io/><h1>DrCicero</h1><span>Thoughts on Computer Science</span></a>
+<ul id="menu"><li><a href=https://drcicero.github.io/>Home</a></li>
+  <li><a href=https://drcicero.github.io/posts/>Posts</a></li>
+  <li><a href=https://drcicero.github.io/games/>Games</a></li>
+  <li><a href=https://drcicero.github.io/music.html>Music</a></li>
+  <li><a href=https://drcicero.github.io/feed.atom>Feed</a></li></ul>
   </header>
 
   <h1>Music</h1>
-  
   <div><p>The following works by David R. are licenced under a CC BY SA 4 Licence.</p></div>
   <div><p>This means, if you want to use its for example in a movie or a game, please refer to 'DrCicero', 'David R.' or to the site  'drcicer.github.io'. Even better would be to do all three things!</p></div>
   <div><div class="half-float">
-  <h2 style="font-size:1em">0 - 10</h2><ul>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/01 - new.mp3">
-  01 - new <small>1:41</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/02 - honky.mp3">
-  02 - honky <small>0:12</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/03 - xmas.mp3">
-  03 - xmas <small>0:50</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/04 - quick.mp3">
-  04 - quick <small>0:48</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/05 - slow.mp3">
-  05 - slow <small>0:50</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/06 - aiae-ou.mp3">
-  06 - aiae-ou <small>1:08</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/07 - twice.mp3">
-  07 - twice <small>1:18</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/08 - bumdabunda2.mp3">
-  08 - bumdabunda2 <small>0:48</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/09 - fuge.mp3">
-  09 - fuge <small>1:49</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/10 - roko.mp3">
-  10 - roko <small>1:44</small></a>
-</li>
-</ul></div>
+  <h2 style="font-size:1em">0 - 10</h2>
+  <div class="block-list">
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/01 - new.mp3">
+  01 - new
+  <small>1:41</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/02 - honky.mp3">
+  02 - honky
+  <small>0:12</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/03 - xmas.mp3">
+  03 - xmas
+  <small>0:50</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/04 - quick.mp3">
+  04 - quick
+  <small>0:48</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/05 - slow.mp3">
+  05 - slow
+  <small>0:50</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/06 - aiae-ou.mp3">
+  06 - aiae-ou
+  <small>1:08</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/07 - twice.mp3">
+  07 - twice
+  <small>1:18</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/08 - bumdabunda2.mp3">
+  08 - bumdabunda2
+  <small>0:48</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/09 - fuge.mp3">
+  09 - fuge
+  <small>1:49</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/10 - roko.mp3">
+  10 - roko
+  <small>1:44</small>
+</a>
+
+</div>
+
+</div>
 <div class="half-float">
-  <h2 style="font-size:1em">10 - 20</h2><ul>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/11 - long.mp3">
-  11 - long <small>2:43</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/12 - battle2.mp3">
-  12 - battle2 <small>0:39</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/13 - bad.mp3">
-  13 - bad <small>1:06</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/14 - happy birthday.mp3">
-  14 - happy birthday <small>0:37</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/15 - dance.mp3">
-  15 - dance <small>2:06</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/16 - upndown.mp3">
-  16 - upndown <small>1:22</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/17 - sad.mp3">
-  17 - sad <small>0:40</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/18 - satt.mp3">
-  18 - satt <small>0:59</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/19 - strange march.mp3">
-  19 - strange march <small>0:34</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/20 - room2.mp3">
-  20 - room2 <small>0:28</small></a>
-</li>
-</ul></div>
+  <h2 style="font-size:1em">10 - 20</h2>
+  <div class="block-list">
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/11 - long.mp3">
+  11 - long
+  <small>2:43</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/12 - battle2.mp3">
+  12 - battle2
+  <small>0:39</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/13 - bad.mp3">
+  13 - bad
+  <small>1:06</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/14 - happy birthday.mp3">
+  14 - happy birthday
+  <small>0:37</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/15 - dance.mp3">
+  15 - dance
+  <small>2:06</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/16 - upndown.mp3">
+  16 - upndown
+  <small>1:22</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/17 - sad.mp3">
+  17 - sad
+  <small>0:40</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/18 - satt.mp3">
+  18 - satt
+  <small>0:59</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/19 - strange march.mp3">
+  19 - strange march
+  <small>0:34</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/20 - room2.mp3">
+  20 - room2
+  <small>0:28</small>
+</a>
+
+</div>
+
+</div>
 <div class="half-float">
-  <h2 style="font-size:1em">20 - 30</h2><ul>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/21 - thinking2.mp3">
-  21 - thinking2 <small>0:24</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/22 - joy.mp3">
-  22 - joy <small>0:38</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/23 - zwielicht3.mp3">
-  23 - zwielicht3 <small>0:24</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/24 - triple.mp3">
-  24 - triple <small>0:21</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/25 - zyncop.mp3">
-  25 - zyncop <small>0:20</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/26 - lucky.mp3">
-  26 - lucky <small>0:36</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/27 - glocke.mp3">
-  27 - glocke <small>1:18</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/28 - war.mp3">
-  28 - war <small>1:35</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/29 - dim.mp3">
-  29 - dim <small>0:32</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/30 - try_again.mp3">
-  30 - try_again <small>0:41</small></a>
-</li>
-</ul></div>
+  <h2 style="font-size:1em">20 - 30</h2>
+  <div class="block-list">
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/21 - thinking2.mp3">
+  21 - thinking2
+  <small>0:24</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/22 - joy.mp3">
+  22 - joy
+  <small>0:38</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/23 - zwielicht3.mp3">
+  23 - zwielicht3
+  <small>0:24</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/24 - triple.mp3">
+  24 - triple
+  <small>0:21</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/25 - zyncop.mp3">
+  25 - zyncop
+  <small>0:20</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/26 - lucky.mp3">
+  26 - lucky
+  <small>0:36</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/27 - glocke.mp3">
+  27 - glocke
+  <small>1:18</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/28 - war.mp3">
+  28 - war
+  <small>1:35</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/29 - dim.mp3">
+  29 - dim
+  <small>0:32</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/30 - try_again.mp3">
+  30 - try_again
+  <small>0:41</small>
+</a>
+
+</div>
+
+</div>
 <div class="half-float">
-  <h2 style="font-size:1em">30 - 40</h2><ul>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/31 - birthday.mp3">
-  31 - birthday <small>0:15</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/32 - guns.mp3">
-  32 - guns <small>0:58</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/33 - kewl.mp3">
-  33 - kewl <small>0:40</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/34 - banjo.mp3">
-  34 - banjo <small>1:00</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/35 - choir.mp3">
-  35 - choir <small>3:00</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/36 - dynamic.mp3">
-  36 - dynamic <small>1:00</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/37 - space_elevator.mp3">
-  37 - space_elevator <small>1:44</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/38 - baba.mp3">
-  38 - baba <small>1:50</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/39 - triumph.mp3">
-  39 - triumph <small>0:32</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/40 - whistling0_5.mp3">
-  40 - whistling0_5 <small>0:23</small></a>
-</li>
-</ul></div>
+  <h2 style="font-size:1em">30 - 40</h2>
+  <div class="block-list">
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/31 - birthday.mp3">
+  31 - birthday
+  <small>0:15</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/32 - guns.mp3">
+  32 - guns
+  <small>0:58</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/33 - kewl.mp3">
+  33 - kewl
+  <small>0:40</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/34 - banjo.mp3">
+  34 - banjo
+  <small>1:00</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/35 - choir.mp3">
+  35 - choir
+  <small>3:00</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/36 - dynamic.mp3">
+  36 - dynamic
+  <small>1:00</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/37 - space_elevator.mp3">
+  37 - space_elevator
+  <small>1:44</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/38 - baba.mp3">
+  38 - baba
+  <small>1:50</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/39 - triumph.mp3">
+  39 - triumph
+  <small>0:32</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/40 - whistling0_5.mp3">
+  40 - whistling0_5
+  <small>0:23</small>
+</a>
+
+</div>
+
+</div>
 <div class="half-float">
-  <h2 style="font-size:1em">40 - 50</h2><ul>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/41 - still.mp3">
-  41 - still <small>0:44</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/42 - maple.mp3">
-  42 - maple <small>1:20</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/43 - random1.mp3">
-  43 - random1 <small>0:22</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/44 - venedig.mp3">
-  44 - venedig <small>2:18</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/45 - sleep.mp3">
-  45 - sleep <small>1:51</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/46 - dreizehntonmusik.mp3">
-  46 - dreizehntonmusik <small>0:30</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/47 - M.mp3">
-  47 - M <small>1:06</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/48 - beginning.mp3">
-  48 - beginning <small>1:18</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/49 - ea.mp3">
-  49 - ea <small>0:38</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/50 - raw.mp3">
-  50 - raw <small>0:57</small></a>
-</li>
-</ul></div>
+  <h2 style="font-size:1em">40 - 50</h2>
+  <div class="block-list">
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/41 - still.mp3">
+  41 - still
+  <small>0:44</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/42 - maple.mp3">
+  42 - maple
+  <small>1:20</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/43 - random1.mp3">
+  43 - random1
+  <small>0:22</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/44 - venedig.mp3">
+  44 - venedig
+  <small>2:18</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/45 - sleep.mp3">
+  45 - sleep
+  <small>1:51</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/46 - dreizehntonmusik.mp3">
+  46 - dreizehntonmusik
+  <small>0:30</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/47 - M.mp3">
+  47 - M
+  <small>1:06</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/48 - beginning.mp3">
+  48 - beginning
+  <small>1:18</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/49 - ea.mp3">
+  49 - ea
+  <small>0:38</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/50 - raw.mp3">
+  50 - raw
+  <small>0:57</small>
+</a>
+
+</div>
+
+</div>
 <div class="half-float">
-  <h2 style="font-size:1em">50 - 60</h2><ul>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/51 - march.mp3">
-  51 - march <small>1:33</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/52 - high.mp3">
-  52 - high <small>0:17</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/53 - action.mp3">
-  53 - action <small>0:58</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/54 - snow.mp3">
-  54 - snow <small>0:50</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/55 - dunes.mp3">
-  55 - dunes <small>1:14</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/56 - beep-boop.mp3">
-  56 - beep-boop <small>1:05</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/57 - Warten Walzer.mp3">
-  57 - Warten Walzer <small>1:19</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/58 - machine.mp3">
-  58 - machine <small>1:22</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/59 - marsch 2.mp3">
-  59 - marsch 2 <small>0:53</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/60 - through time.mp3">
-  60 - through time <small>1:32</small></a>
-</li>
-</ul></div>
+  <h2 style="font-size:1em">50 - 60</h2>
+  <div class="block-list">
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/51 - march.mp3">
+  51 - march
+  <small>1:33</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/52 - high.mp3">
+  52 - high
+  <small>0:17</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/53 - action.mp3">
+  53 - action
+  <small>0:58</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/54 - snow.mp3">
+  54 - snow
+  <small>0:50</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/55 - dunes.mp3">
+  55 - dunes
+  <small>1:14</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/56 - beep-boop.mp3">
+  56 - beep-boop
+  <small>1:05</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/57 - Warten Walzer.mp3">
+  57 - Warten Walzer
+  <small>1:19</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/58 - machine.mp3">
+  58 - machine
+  <small>1:22</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/59 - marsch 2.mp3">
+  59 - marsch 2
+  <small>0:53</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/60 - through time.mp3">
+  60 - through time
+  <small>1:32</small>
+</a>
+
+</div>
+
+</div>
 <div class="half-float">
-  <h2 style="font-size:1em">60 - 70</h2><ul>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/61 - pool of shade.mp3">
-  61 - pool of shade <small>0:30</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/62 - final.mp3">
-  62 - final <small>0:47</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/63 - wild orchestra.mp3">
-  63 - wild orchestra <small>0:21</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/B1 - MySongOne2.mp3">
-  B1 - MySongOne2 <small>0:38</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/B2 - Song2.mp3">
-  B2 - Song2 <small>0:50</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/B3 - Marsch.mp3">
-  B3 - Marsch <small>0:29</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/B4 - Sandsong.mp3">
-  B4 - Sandsong <small>1:04</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/B5 - Xelda.mp3">
-  B5 - Xelda <small>0:30</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/B6 - Fight.mp3">
-  B6 - Fight <small>0:15</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/B7 - Beach.mp3">
-  B7 - Beach <small>0:18</small></a>
-</li>
-</ul></div>
+  <h2 style="font-size:1em">60 - 70</h2>
+  <div class="block-list">
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/61 - pool of shade.mp3">
+  61 - pool of shade
+  <small>0:30</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/62 - final.mp3">
+  62 - final
+  <small>0:47</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/63 - wild orchestra.mp3">
+  63 - wild orchestra
+  <small>0:21</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/B1 - MySongOne2.mp3">
+  B1 - MySongOne2
+  <small>0:38</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/B2 - Song2.mp3">
+  B2 - Song2
+  <small>0:50</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/B3 - Marsch.mp3">
+  B3 - Marsch
+  <small>0:29</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/B4 - Sandsong.mp3">
+  B4 - Sandsong
+  <small>1:04</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/B5 - Xelda.mp3">
+  B5 - Xelda
+  <small>0:30</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/B6 - Fight.mp3">
+  B6 - Fight
+  <small>0:15</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/B7 - Beach.mp3">
+  B7 - Beach
+  <small>0:18</small>
+</a>
+
+</div>
+
+</div>
 <div class="half-float">
-  <h2 style="font-size:1em">70 - 80</h2><ul>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/S1 - Herbst.mp3">
-  S1 - Herbst <small>0:29</small></a>
-</li>
-  <li><a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/S2 - quirky.mp3">
-  S2 - quirky <small>0:36</small></a>
-</li>
-</ul></div>
+  <h2 style="font-size:1em">70 - 80</h2>
+  <div class="block-list">
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/S1 - Herbst.mp3">
+  S1 - Herbst
+  <small>0:29</small>
+</a>
+
+  <a class="music-link" href="https://56dc88dd6803d8d1a06af8e672b18b8383990fc5.googledrive.com/host/0B832gOh56hiJeTlZQjZIYnJPcmc/data/music/S2 - quirky.mp3">
+  S2 - quirky
+  <small>0:36</small>
+</a>
+
+</div>
+
+</div>
 </div>
   <div><div style=clear:both></div></div>
 
-
-  <small>Last updated: <date date=2015-05-16T02:48:08Z>16 May 2015</date></small>
+  <small>Last updated: <date date=2017-10-17T15:39:09Z>17 Oct 2017</date></small>
   <script async>
 (function () {"use strict";
   var mus = new Audio();

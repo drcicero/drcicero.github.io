@@ -6,14 +6,13 @@
   <link rel="alternate" type="application/atom+xml" href="https://drcicero.github.io/feed.atom" title="Atom Feed">
 
   <style>
-/** imporant styles here */
-body {max-width:35em; margin:auto;
-  font:16px/1.5 "Droid Sans","Helvetica Neue",Helvetica,sans-serif}
-#header {text-align:center; animation:fromup 1.5s}
-@keyframes fromup {
-   0% {transform:translateY(-25px); opacity:0}
-  33% {transform:translateY(-25px); opacity:0} to {} }
+/* important styles here */
+body {max-width:35em; min-height:100vh; margin:auto;
+  font:16px/1.5 "Roboto","Helvetica Neue",Helvetica,sans-serif}
+#header {text-align:center; animation:fromup 1s}
+/*@keyframes fromup { 0% {transform:translateY(-5px); opacity:.5} to {} }*/
 #header > a:before {content:""; display:inline-block;
+  image-rendering: -moz-crisp-edges; image-rendering: pixelated;
   background-image: url(/avatar.png); width:48px; height:48px; transform:scale(1.8); margin:1em}
 
 #menu {margin:auto; padding:0}
@@ -24,48 +23,60 @@ body {max-width:35em; margin:auto;
 
 </head><body>
   <header id=header>
-    <a href=https://drcicero.github.io/><h1>DrCicero</h1><span>Hobby Gamedev</span></a>
-    <ul id=menu><li><a href=https://drcicero.github.io/>Home</a></li><li><a href=https://drcicero.github.io/games/index.html>Games</a></li><li><a href=https://drcicero.github.io/music.html>Music</a></li><li><a href=https://drcicero.github.io/feed.atom>Feed</a></li></ul>
+    <a href=https://drcicero.github.io/><h1>DrCicero</h1><span>Thoughts on Computer Science</span></a>
+<ul id="menu"><li><a href=https://drcicero.github.io/>Home</a></li>
+  <li><a href=https://drcicero.github.io/posts/>Posts</a></li>
+  <li><a href=https://drcicero.github.io/games/>Games</a></li>
+  <li><a href=https://drcicero.github.io/music.html>Music</a></li>
+  <li><a href=https://drcicero.github.io/feed.atom>Feed</a></li></ul>
   </header>
 
   <h1>Home</h1>
-  <article id="2015-03-29T08:00:12Z">
+  <article>
   <h1 id="2015-03-29T08:00:12Z"><a href="http://drcicero.github.io/docl">Docl released</a></h1>
   <p>finally i found the time to upload my hobby lua documentation tool to github</p>
-<small style="display:block"><date date="2015-03-29T08:00:12Z">29 Mar 2015</date></small></article>
-<article id="2015-03-11T22:58:57Z">
+  <small style="display:block">29 Mar 2015</small>
+</article>
+<article>
   <h1 id="2015-03-11T22:58:57Z"><a href="http://drcicero.github.io/music.html">Music uploaded</a></h1>
   <p>now you can enjoy 60 min of original music.</p>
-<small style="display:block"><date date="2015-03-11T22:58:57Z">11 Mar 2015</date></small></article>
-<article id="2015-03-10T11:00:11Z">
+  <small style="display:block">11 Mar 2015</small>
+</article>
+<article>
   <h1 id="2015-03-10T11:00:11Z"><a href="http://flavio.tordini.org/minitube">Linux App: Minitube</a></h1>
   <p>is a tool for watching youtube without flash or html5.</p>
-<small style="display:block"><date date="2015-03-10T11:00:11Z">10 Mar 2015</date></small></article>
-<article id="2015-03-09T22:00:00Z">
+  <small style="display:block">10 Mar 2015</small>
+</article>
+<article>
   <h1 id="2015-03-09T22:00:00Z"><a href="http://www.love2d.org">Game Engine: Love2d</a></h1>
   <p>is a wonderful engine for lua based 2d games, that i have to recommend!</p>
-<small style="display:block"><date date="2015-03-09T22:00:00Z">09 Mar 2015</date></small></article>
-<article id="2015-03-08T20:00:00Z">
+  <small style="display:block">09 Mar 2015</small>
+</article>
+<article>
   <h1 id="2015-03-08T20:00:00Z"><a href="http://tboneiss.itch.io/hatcat">Puzzle: Hat Cat</a></h1>
   <p>and the obvious crimes against the fundamental laws of physics is a mind-boggling 2d puzzle game about space-loops, powered by love2d.</p>
-<small style="display:block"><date date="2015-03-08T20:00:00Z">08 Mar 2015</date></small></article>
-<article id="2015-03-07T23:00:00Z">
+  <small style="display:block">08 Mar 2015</small>
+</article>
+<article>
   <h1 id="2015-03-07T23:00:00Z"><a href="http://tangramgames.dk/games/sienna/">One Button: Sienna</a></h1>
   <p>by tangram is a fast-paced one button runner and made with the awesome love2d engine!</p>
-<small style="display:block"><date date="2015-03-07T23:00:00Z">07 Mar 2015</date></small></article>
-<article id="2015-03-06T19:00:00Z">
+  <small style="display:block">07 Mar 2015</small>
+</article>
+<article>
   <h1 id="2015-03-06T19:00:00Z"><a href="http://www.newgrounds.com/portal/view/644696">Flash Adventure: Phoenotopia</a></h1>
   <p>is a free fun action puzzle platformer with a cool story! ( took me quite some time to play :) )</p>
-<small style="display:block"><date date="2015-03-06T19:00:00Z">06 Mar 2015</date></small></article>
-<article id="2015-03-05T20:00:00Z">
+  <small style="display:block">06 Mar 2015</small>
+</article>
+<article>
   <h1 id="2015-03-05T20:00:00Z">Welcome,</h1>
   <p>i am drcicero and this is my micro-blog. From time to time i am going to write a post. Mostly these will consist of links or other forms of recommendations.</p>
   <p>Be sure to subscribe using your favorite rss/atom reader.</p>
   <p></p>
-<small style="display:block"><date date="2015-03-05T20:00:00Z">05 Mar 2015</date></small></article>
+  <small style="display:block">05 Mar 2015</small>
+</article>
 
 
-  <small>Last updated: <date date=2015-05-16T02:48:08Z>16 May 2015</date></small>
+  <small>Last updated: <date date=2017-10-17T15:39:09Z>17 Oct 2017</date></small>
   <script async>
 (function () {"use strict";
   var mus = new Audio();

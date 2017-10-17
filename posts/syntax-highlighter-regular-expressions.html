@@ -1,0 +1,129 @@
+<!doctype html> <html><head>
+  <meta charset=utf-8>
+  <meta name=viewport content="width=device-width, initial-scale=1">
+  <title> Syntax-Highlighting with Regular Expressions - drcicero</title>
+  <link rel="shortcut icon" href="https://drcicero.github.io/avatar.png">
+  <link rel="alternate" type="application/atom+xml" href="https://drcicero.github.io/feed.atom" title="Atom Feed">
+
+  <style>
+/* important styles here */
+body {max-width:35em; min-height:100vh; margin:auto;
+  font:16px/1.5 "Roboto","Helvetica Neue",Helvetica,sans-serif}
+#header {text-align:center; animation:fromup 1s}
+/*@keyframes fromup { 0% {transform:translateY(-5px); opacity:.5} to {} }*/
+#header > a:before {content:""; display:inline-block;
+  image-rendering: -moz-crisp-edges; image-rendering: pixelated;
+  background-image: url(/avatar.png); width:48px; height:48px; transform:scale(1.8); margin:1em}
+
+#menu {margin:auto; padding:0}
+#menu > li {display:inline}
+#menu a {display:inline-block; padding:.5em}
+  </style>
+  <link rel=stylesheet async href="https://drcicero.github.io/style.css">
+
+</head><body>
+  <header id=header>
+    <a href=https://drcicero.github.io/><h1>DrCicero</h1><span>Thoughts on Computer Science</span></a>
+<ul id="menu"><li><a href=https://drcicero.github.io/>Home</a></li>
+  <li><a href=https://drcicero.github.io/posts/>Posts</a></li>
+  <li><a href=https://drcicero.github.io/games/>Games</a></li>
+  <li><a href=https://drcicero.github.io/music.html>Music</a></li>
+  <li><a href=https://drcicero.github.io/feed.atom>Feed</a></li></ul>
+  </header>
+
+  <h1> Syntax-Highlighting with Regular Expressions</h1>
+  <p>
+Ever wanted some implement some syntax-highlighting? Unfortunately it can be quite hard to parse some programming languages. But often you do not have to implement a full parser. It is enough to sequentially apply a number of regular expression substitutions to convert your favorite language code to markup.</p>
+
+<p>But there is a catch! Parsing with regular expressions leads to a number of problems. For example when the newly generated markup matches another rule and is then markupped a second time.</p>
+
+<p>A possible solution is to replace the matched string with a placeholder and later, replace the placeholder with the generated markup.</p>
+
+<p>The following is a some JavaScript I recently used to generate Html-Markup from Lua-Code.</p>
+
+<p>At first the "&" and "<" sign, which destroy your markup, are replaced by Html-Entities. Then an newline is added to the string end, to ensure that lines end in a newline, and thus a line can be matched easily in a regular expressions, then all line breaks are converted to < br> tags.</p>
+
+<p>Tabs are replaced by four spaces, and then spaces are replaced by a break-point and a nonbreaking space. In comparison with only nbsp, this allows the browser to display multiple consequtive spaces, and to break the line to avoid overflow.</p>
+
+<p>Dollars, which are used as the placeholders, are then replaced by placeholder.</p>
+
+<p>Escape characters, strings, comments, operators and keywords - in this order - are then wrapped in spans with corresponding classes.</p>
+
+<p>Finally, all the placeholders are filled in again.</p>
+
+<p>Have you ever written a syntax-highlighter?</p>
+
+<p><pre><code class=language-js>
+function highlight(string) {
+    "use strict";
+
+    var inserts = {};
+    var i = 0;
+
+    var wrapclass = function(klass) { return function (_, x, y) {
+        inserts[i] = "<span class=" + klass + ">" + x + "</span>";
+        console.log(x, y);
+        return "$" + i++ + ";" + y;
+    }};
+
+    var suspend = function(x) {
+        inserts[i] = ""+x;
+        return "$" + i++ + ";";
+    };
+
+    return (string .replace(/&/g, "&amp;") .replace(/</g, "&lt;") + "<br>")
+
+        .replace(/\n/g, "<br>")
+        .replace(/\t/g, "    ")
+        .replace(/ /g, "<wbr>&nbsp;")
+
+        .replace(/\$/g, suspend)
+
+        .replace(/(\\\\)()/g, wrapclass("escape"))
+        .replace(/(\\["'])()/g, wrapclass("escape"))
+
+        .replace(/('.+?')()/g, wrapclass("string"))
+        .replace(/(".+?")()/g, wrapclass("string"))
+
+        .replace(/(--.+?)(<br>)/g, wrapclass("comment"))
+
+        .replace(/([=()#[\]+*\-{}])()/g, wrapclass("operator"))
+
+        .replace(/(elseif|do|in|if|for|end|else|then|break|until|local|while|return|function)(<)/g, wrapclass("keyword"))
+
+        .replace(/\$.+?;/g, function(x) {return inserts[parseInt(x.slice(1,-1))];})
+        .replace(/\$.+?;/g, function(x) {return inserts[parseInt(x.slice(1,-1))];})
+        .replace(/\$.+?;/g, function(x) {return inserts[parseInt(x.slice(1,-1))];})
+
+        .slice(0, -4);
+}
+</pre></code></p>
+
+<p></p>
+
+ <p><a class=footer-return-link href=/posts>more articles by drcicero</a></p></div>
+
+  <small>Last updated: <date date=2017-10-17T15:39:09Z>17 Oct 2017</date></small>
+  <script async>
+(function () {"use strict";
+  var mus = new Audio();
+
+  function toggle(e) {
+    if (mus.getAttribute("src") !== this.href) {
+      var musics = document.getElementsByClassName("playing");
+      for (var i=0; i<musics.length; i++) musics[i].classList.remove("playing");
+      mus.src = this.href;
+      mus.play(); this.classList.add("playing");
+
+    } else if (mus.paused || mus.ended) {mus.play(); this.classList.add("playing");}
+    else {mus.pause(); this.classList.remove("playing");}
+
+    return false;
+  }
+
+  var musics = document.getElementsByClassName("music-link");
+  for (var i=0; i<musics.length; i++)
+    musics[i].onclick = toggle;
+})();
+  </script>
+</body></html>

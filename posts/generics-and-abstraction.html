@@ -1,0 +1,116 @@
+<!doctype html> <html><head>
+  <meta charset=utf-8>
+  <meta name=viewport content="width=device-width, initial-scale=1">
+  <title> Generics and Abstraction - drcicero</title>
+  <link rel="shortcut icon" href="https://drcicero.github.io/avatar.png">
+  <link rel="alternate" type="application/atom+xml" href="https://drcicero.github.io/feed.atom" title="Atom Feed">
+
+  <style>
+/* important styles here */
+body {max-width:35em; min-height:100vh; margin:auto;
+  font:16px/1.5 "Roboto","Helvetica Neue",Helvetica,sans-serif}
+#header {text-align:center; animation:fromup 1s}
+/*@keyframes fromup { 0% {transform:translateY(-5px); opacity:.5} to {} }*/
+#header > a:before {content:""; display:inline-block;
+  image-rendering: -moz-crisp-edges; image-rendering: pixelated;
+  background-image: url(/avatar.png); width:48px; height:48px; transform:scale(1.8); margin:1em}
+
+#menu {margin:auto; padding:0}
+#menu > li {display:inline}
+#menu a {display:inline-block; padding:.5em}
+  </style>
+  <link rel=stylesheet async href="https://drcicero.github.io/style.css">
+
+</head><body>
+  <header id=header>
+    <a href=https://drcicero.github.io/><h1>DrCicero</h1><span>Thoughts on Computer Science</span></a>
+<ul id="menu"><li><a href=https://drcicero.github.io/>Home</a></li>
+  <li><a href=https://drcicero.github.io/posts/>Posts</a></li>
+  <li><a href=https://drcicero.github.io/games/>Games</a></li>
+  <li><a href=https://drcicero.github.io/music.html>Music</a></li>
+  <li><a href=https://drcicero.github.io/feed.atom>Feed</a></li></ul>
+  </header>
+
+  <h1> Generics and Abstraction</h1>
+  <p>
+Recently I have come across this interesting article:</p>
+
+<p><blockquote>
+  The generic dilemma is this: do you want slow programmers, slow compilers and bloated binaries, or slow execution times?<br/>
+  - Russ Cox (<a href="http://research.swtch.com/generic">http://research.swtch.com/generic</a>)
+</blockquote></p>
+
+<p>It describes three ways to implement generics in a language. So first, what is a generic? Consider this: If a function is a value that depends on other values, then a generic is a type that depends on other types. A good example is the type List(Item). To actually get any use of such a list, one must know, which type items it contains.</p>
+
+<p>The three possibilities are (I reordered them for nefarious purposes):</p>
+
+<p><ol>
+<li><b>No Generics</b> (the way of (old) C)<br/>
+<i>Negative Effect</i>: Increased Programming time!<br/>
+<i>Positive Effect</i>: Decreased Language design time! ;)<br/><br/>
+
+Every time you define a new type, and want to use one of the functions that someone already implemented, you will have to define them with different types, names and mostly identical code.<br/><br/>
+
+Thus instead of a generic function add(X, Y), you will see the functions addIntInt, addStringString, add2dPoint2dPoint, etc...<br/><br/>
+
+(BTW If you think that adding values in C is generic, because you can write 1+1 and 1.0+1.0, Congrats! Obviously there is a need for generic programming, but up to C17 programmers were not allowed to define such allowed to program such functions yourself. Now it is possible Yay!)<br/><br/>
+
+</li><li><b>Boxing</b> (Java; generics by pointers)<br/>
+<i>Negative Effect</i>: Slow execution! (Another layer of indirection)<br/>
+<i>Positive Effect</i>: Binary size reduction! (One method fits all)<br/><br/>
+
+In Java, generic functions  use boxed values. This means, that you do not get to use the values themselves, but rather a pointer to them, and additionally a 'vtable' or 'class' pointer to a list of supported methods. <br/><br/>
+
+Image you want to implement multiplication by repeated addition. The types already have the addition so you can define:<br/><br/>
+ 
+&nbsp; func&lt;T&gt; mul(int a, T b) {<br/>
+&nbsp; &nbsp; for (int i=0; i&lt;a; i++)<br/>
+&nbsp;&nbsp; &nbsp;&nbsp; b += b;<br/>
+&nbsp; &nbsp; return b;<br/>
+&nbsp; }<br/><br/>
+
+Then a one-size-fits-all method can just operate with values of the type by ONLY using the supplied methods, which will be different for each.<br/><br/>
+
+</li><li><b>Specialisation</b> (Cpp Templates; value generics)<br/>
+<i>Negative Effect</i>: Program-Binary size increases!<br/>
+<i>Positive Effect</i>: Fast execution! (As a kind of inlining, it enables optimizations.)<br/><br/>
+
+In Cpp every generic type is instantiated once per  argument type. Image a the Boxing version above, and then for every possible 'vtable' a special function is generated, where all 'vtable' invocations are inlined.<br/>
+
+You write on function map and the compiler generates the other functions for you. Like in version 1,  all methods that operate on such data have to be duplicated, but you do not have to do it.<br/><br/>
+
+</li></ol></p>
+
+<p>Now you may notice, that I mentioned vtables in the version that does not talk about Cpp. This is because Cpp allows version 3 and 2, because only version 2 allows you to define.</p>
+
+<p>I want to mention that you do not have to implement version 2 via the <b>vtable</b> method, but you can also use the method of <b>fat pointers</b> like in rust.</p>
+
+<p>Additionally someone commented there about a fourth kind of generics called <i>polyinstantiation</i>, that the language BitC was supposed to use. However, I could only  find an article that did only mention the word but not really explain it.
+</p>
+
+ <p><a class=footer-return-link href=/posts>more articles by drcicero</a></p></div>
+
+  <small>Last updated: <date date=2017-10-17T15:39:09Z>17 Oct 2017</date></small>
+  <script async>
+(function () {"use strict";
+  var mus = new Audio();
+
+  function toggle(e) {
+    if (mus.getAttribute("src") !== this.href) {
+      var musics = document.getElementsByClassName("playing");
+      for (var i=0; i<musics.length; i++) musics[i].classList.remove("playing");
+      mus.src = this.href;
+      mus.play(); this.classList.add("playing");
+
+    } else if (mus.paused || mus.ended) {mus.play(); this.classList.add("playing");}
+    else {mus.pause(); this.classList.remove("playing");}
+
+    return false;
+  }
+
+  var musics = document.getElementsByClassName("music-link");
+  for (var i=0; i<musics.length; i++)
+    musics[i].onclick = toggle;
+})();
+  </script>
+</body></html>
