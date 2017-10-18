@@ -1,28 +1,28 @@
+/*@keyframes fromup { 0% {transform:translateY(-5px); opacity:.5} to {} }*/
+
 html {background:#222} body {background:#fff; padding:0 2em}
-article {padding:1em 0; border-bottom:1px solid #ddd}
-h1 {padding:0; margin:0; font-weight:bold; font-size:1.5em}
+
 small {opacity:.5; font-size:1em}
+
 a {text-decoration:none; color:#8b0; border-bottom:1px solid #8b0;}
 a:visited {border-color: #eee;} a:hover, a:focus {color:#0ad}
 a.footer-return-link {display:block; width:50%; margin:auto; padding:1em;
   text-align:center; border-bottom:none; background:#8b0; color:white}
 .playing {color:#000}
 
-#header {margin:auto; padding:1em}
-#header > a {padding:1em; display:inline-block; border:none;
-  border-bottom: 1px solid #ddd}
+#header {text-align:center; animation:fromup 1s}
+#header > a:before {content:""; display:inline-block;
+  image-rendering: -moz-crisp-edges; image-rendering: pixelated;
+  background-image: url(/avatar.png); width:48px; height:48px; transform:scale(1.8); margin:1em}
 #header > a > h1 {font-size:1.5em}
 #header > a > span {color:#aaa; font-size:1em}
-#menu > li > a {border:0}
 
 .half-float {width:50%; float:left; padding:0.2em; box-sizing:border-box}
 
+article {padding:1em 0; border-bottom:1px solid #ddd}
 article h1 {font-size:1em;display:inline}
 article p {display:inline}
 
 pre > code {font-size: .7em; display: block;
   border-left: 1em solid silver; overflow-x: auto}
-
-.block-list {list-style:none; padding:0}
-.block-list a {display:block; border:1px solid silver; margin:.5em 0; padding:0.5em 1em}
 

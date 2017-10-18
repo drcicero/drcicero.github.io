@@ -6,18 +6,18 @@
   <link rel="alternate" type="application/atom+xml" href="https://drcicero.github.io/feed.atom" title="Atom Feed">
 
   <style>
-/* important styles here */
 body {max-width:35em; min-height:100vh; margin:auto;
   font:16px/1.5 "Roboto","Helvetica Neue",Helvetica,sans-serif}
-#header {text-align:center; animation:fromup 1s}
-/*@keyframes fromup { 0% {transform:translateY(-5px); opacity:.5} to {} }*/
-#header > a:before {content:""; display:inline-block;
-  image-rendering: -moz-crisp-edges; image-rendering: pixelated;
-  background-image: url(/avatar.png); width:48px; height:48px; transform:scale(1.8); margin:1em}
-
 #menu {margin:auto; padding:0}
+#menu > li > a {border:0}
 #menu > li {display:inline}
 #menu a {display:inline-block; padding:.5em}
+h1 {padding:0; margin:0; font-weight:bold; font-size:1.5em}
+#header {margin:auto; padding:1em}
+#header > a {padding:1em; display:inline-block;
+  border:none; border-bottom: 1px solid #ddd}
+.block-list {list-style:none; padding:0}
+.block-list a {display:block; border:1px solid silver; margin:.5em 0; padding:0.5em 1em}
   </style>
   <link rel=stylesheet async href="https://drcicero.github.io/style.css">
 
@@ -103,7 +103,7 @@ function highlight(string) {
 
  <p><a class=footer-return-link href=/posts>more articles by drcicero</a></p></div>
 
-  <small>Last updated: <date date=2017-10-17T15:39:09Z>17 Oct 2017</date></small>
+  <iframe src=https://drcicero.github.io/lastupdated.html style="width: 100%; border: none; height: 3em;"></iframe>
   <script async>
 (function () {"use strict";
   var mus = new Audio();
