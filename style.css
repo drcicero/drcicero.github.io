@@ -1,6 +1,5 @@
-/*@keyframes fromup { 0% {transform:translateY(-5px); opacity:.5} to {} }*/
-
-html {background:#222} body {background:#fff; padding:0 2em}
+/*@keyframes fromup { 0% {transform:translateY(-5px); opacity:.5} to {} }
+html {background:#222} body {background:#fff; padding:0 2em}*/
 
 small {opacity:.5; font-size:1em}
 

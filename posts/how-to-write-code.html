@@ -6,7 +6,7 @@
   <link rel="alternate" type="application/atom+xml" href="https://drcicero.github.io/feed.atom" title="Atom Feed">
 
   <style>
-body {max-width:35em; min-height:100vh; margin:auto;
+body {max-width:40em; min-height:100vh; margin:auto; padding: 0 1em;
   font:16px/1.5 "Roboto","Helvetica Neue",Helvetica,sans-serif}
 #menu {margin:auto; padding:0}
 #menu > li > a {border:0}
@@ -35,11 +35,13 @@ h1 {padding:0; margin:0; font-weight:bold; font-size:1.5em}
   <p>
 Here are two articles I recently read, about how we should write code to prohibit bugs and make code easy to understand, that really resonated with me:</p>
 
-<p><b>Be explicit about the order of executing</b>: Many programs are a ordered list of statements, forming a step-by-step recipe to get work done. However, it is easy to introduce bugs and errors by unintentionally changing the order of statements. Instead, one should make dependencies explicit between the steps. When you consider the steps as nodes and the dependencies as edges, you describe a directed graph of steps. Then it should be obvious and clear which order to execute the steps are intended. Namely any order that visits and executes the steps from left to right (called topological order of the graph).
-<a href="http://www.lihaoyi.com/post/WhatsFunctionalProgrammingAllAbout.html">What's Functional Programming All About? (Haoyi)</a></p>
+<p>*   <b>Be explicit about the order of executing</b><br>
+    Many programs are a ordered list of statements, forming a step-by-step recipe to get work done. However, it is easy to introduce bugs and errors by unintentionally changing the order of statements. Instead, one should make dependencies explicit between the steps. When you consider the steps as nodes and the dependencies as edges, you describe a directed graph of steps. Then it should be obvious and clear which order to execute the steps are intended. Namely any order that visits and executes the steps from left to right (called topological order of the graph).<br>
+    <a href="http://www.lihaoyi.com/post/WhatsFunctionalProgrammingAllAbout.html">What's Functional Programming All About? (Haoyi)</a></p>
 
-<p><b>Refactor code like a zip compressor algorithm</b>: During refactoring keep semantic compression in mind -- namely writing the shortest amount of code to produce the same result. Only introduce abstraction (for example functions) when they make your programs shorter and easier; remove abstractions that make the program longer and harder to understand. Semanctic Compression.
-<a href="https://mollyrocket.com/casey/stream_0019.html">Working on The Witness, Part 11 (Muratori)</a></p>
+<p>*   <b>Refactor code like a zip compressor algorithm</b><br>
+    During refactoring keep semantic compression in mind -- namely writing the shortest amount of code to produce the same result. Only introduce abstraction (for example functions) when they make your programs shorter and easier; remove abstractions that make the program longer and harder to understand. Semanctic Compression.<br>
+    <a href="https://mollyrocket.com/casey/stream_0019.html">Working on The Witness, Part 11 (Muratori)</a></p>
 
 <p>Oh and by the way: The first article tells us that, independent of the language you write code in, if your code depends on the order of statements, we call it imperative and if the dependencies are explicit, we call it functional programming.</p>
 
