@@ -6,7 +6,7 @@
   <id>http://drcicero.github.io/</id>
   <logo>https://drcicero.github.io/avatar.png</logo>
   <author><name>drcicero</name></author>
-  <updated>2018-04-22T15:42:27Z</updated>
+  <updated>2018-04-23T00:33:51Z</updated>
 
   <link rel="self" type="application/atom+xml" href="http://drcicero.github.io/feed.atom"/>
   <link rel="alternate" type="text/html" href="http://drcicero.github.io/"/>
@@ -15,64 +15,64 @@
   <title type="html">Docl, a lua documentation</title>
   <published>2015-03-29T08:00:12Z</published>
   <updated>2015-03-29T08:00:12Z</updated>
-  <id>https://drcicero.github.io/#2015-03-29T08:00:12Z</id>
-  <link rel="alternate" type="text/html" href="https://drcicero.github.io/#2015-03-29T08:00:12Z"/>
+  <id>https://drcicero.github.io/feed.html#2015-03-29T08:00:12Z</id>
+  <link rel="alternate" type="text/html" href="https://drcicero.github.io/feed.html#2015-03-29T08:00:12Z"/>
   <summary type="html">&lt;p&gt;what it says on the tin&lt;/p&gt;&lt;a href=&quot;http://drcicero.github.io/docl&quot;&gt;Docl, a lua documentation&lt;/a&gt;</summary>
 </entry>
 <entry>
   <title type="html">Music</title>
   <published>2015-03-11T22:58:57Z</published>
   <updated>2015-03-11T22:58:57Z</updated>
-  <id>https://drcicero.github.io/#2015-03-11T22:58:57Z</id>
-  <link rel="alternate" type="text/html" href="https://drcicero.github.io/#2015-03-11T22:58:57Z"/>
+  <id>https://drcicero.github.io/feed.html#2015-03-11T22:58:57Z</id>
+  <link rel="alternate" type="text/html" href="https://drcicero.github.io/feed.html#2015-03-11T22:58:57Z"/>
   <summary type="html">&lt;p&gt;~60 min (midi)-music by drcicero&lt;/p&gt;&lt;a href=&quot;http://drcicero.github.io/music.html&quot;&gt;Music&lt;/a&gt;</summary>
 </entry>
 <entry>
   <title type="html">Recommend: Minitube</title>
   <published>2015-03-10T11:00:11Z</published>
   <updated>2015-03-10T11:00:11Z</updated>
-  <id>https://drcicero.github.io/#2015-03-10T11:00:11Z</id>
-  <link rel="alternate" type="text/html" href="https://drcicero.github.io/#2015-03-10T11:00:11Z"/>
+  <id>https://drcicero.github.io/feed.html#2015-03-10T11:00:11Z</id>
+  <link rel="alternate" type="text/html" href="https://drcicero.github.io/feed.html#2015-03-10T11:00:11Z"/>
   <summary type="html">&lt;p&gt;is a desktop tool for watching youtube without flash or html5.&lt;/p&gt;&lt;a href=&quot;http://flavio.tordini.org/minitube&quot;&gt;Recommend: Minitube&lt;/a&gt;</summary>
 </entry>
 <entry>
   <title type="html">Recommend: Game Engine - Löve</title>
   <published>2015-03-09T22:00:00Z</published>
   <updated>2015-03-09T22:00:00Z</updated>
-  <id>https://drcicero.github.io/#2015-03-09T22:00:00Z</id>
-  <link rel="alternate" type="text/html" href="https://drcicero.github.io/#2015-03-09T22:00:00Z"/>
+  <id>https://drcicero.github.io/feed.html#2015-03-09T22:00:00Z</id>
+  <link rel="alternate" type="text/html" href="https://drcicero.github.io/feed.html#2015-03-09T22:00:00Z"/>
   <summary type="html">&lt;p&gt;is a wonderful game engine for lua based 2d games.&lt;/p&gt;&lt;a href=&quot;http://www.love2d.org&quot;&gt;Recommend: Game Engine - Löve&lt;/a&gt;</summary>
 </entry>
 <entry>
   <title type="html">Recommend: Puzzle - Hat Cat</title>
   <published>2015-03-08T20:00:00Z</published>
   <updated>2015-03-08T20:00:00Z</updated>
-  <id>https://drcicero.github.io/#2015-03-08T20:00:00Z</id>
-  <link rel="alternate" type="text/html" href="https://drcicero.github.io/#2015-03-08T20:00:00Z"/>
+  <id>https://drcicero.github.io/feed.html#2015-03-08T20:00:00Z</id>
+  <link rel="alternate" type="text/html" href="https://drcicero.github.io/feed.html#2015-03-08T20:00:00Z"/>
   <summary type="html">&lt;p&gt;and the obvious crimes against the fundamental laws of physics is a mind-boggling 2d puzzle game about space-loops, powered by löve.&lt;/p&gt;&lt;a href=&quot;http://tboneiss.itch.io/hatcat&quot;&gt;Recommend: Puzzle - Hat Cat&lt;/a&gt;</summary>
 </entry>
 <entry>
   <title type="html">Recoomend: Sienna, a one button game</title>
   <published>2015-03-07T23:00:00Z</published>
   <updated>2015-03-07T23:00:00Z</updated>
-  <id>https://drcicero.github.io/#2015-03-07T23:00:00Z</id>
-  <link rel="alternate" type="text/html" href="https://drcicero.github.io/#2015-03-07T23:00:00Z"/>
+  <id>https://drcicero.github.io/feed.html#2015-03-07T23:00:00Z</id>
+  <link rel="alternate" type="text/html" href="https://drcicero.github.io/feed.html#2015-03-07T23:00:00Z"/>
   <summary type="html">&lt;p&gt;by tangram is a fast-paced one button runner and made with the awesome love2d engine!&lt;/p&gt;&lt;a href=&quot;http://tangramgames.dk/games/sienna/&quot;&gt;Recoomend: Sienna, a one button game&lt;/a&gt;</summary>
 </entry>
 <entry>
   <title type="html">Recommend: Phoenotopia, a flash adventure,</title>
   <published>2015-03-06T19:00:00Z</published>
   <updated>2015-03-06T19:00:00Z</updated>
-  <id>https://drcicero.github.io/#2015-03-06T19:00:00Z</id>
-  <link rel="alternate" type="text/html" href="https://drcicero.github.io/#2015-03-06T19:00:00Z"/>
+  <id>https://drcicero.github.io/feed.html#2015-03-06T19:00:00Z</id>
+  <link rel="alternate" type="text/html" href="https://drcicero.github.io/feed.html#2015-03-06T19:00:00Z"/>
   <summary type="html">&lt;p&gt;is a free fun action puzzle platformer with a cool story!&lt;/p&gt;&lt;a href=&quot;http://www.newgrounds.com/portal/view/644696&quot;&gt;Recommend: Phoenotopia, a flash adventure,&lt;/a&gt;</summary>
 </entry>
 <entry>
   <title type="html">Welcome,</title>
   <published>2015-03-05T20:00:00Z</published>
   <updated>2015-03-05T20:00:00Z</updated>
-  <id>https://drcicero.github.io/#2015-03-05T20:00:00Z</id>
-  <link rel="alternate" type="text/html" href="https://drcicero.github.io/#2015-03-05T20:00:00Z"/>
+  <id>https://drcicero.github.io/feed.html#2015-03-05T20:00:00Z</id>
+  <link rel="alternate" type="text/html" href="https://drcicero.github.io/feed.html#2015-03-05T20:00:00Z"/>
   <summary type="html">&lt;p&gt;i am drcicero and this is my micro-blog. From time to time i am going to write a post. Mostly these will consist of links or other forms of recommendations.&lt;/p&gt;
   &lt;p&gt;Be sure to subscribe using your favorite rss/atom reader.&lt;/p&gt;
   &lt;p&gt;&lt;/p&gt;&lt;a href=&quot;http://www.newgrounds.com/portal/view/644696&quot;&gt;Welcome,&lt;/a&gt;</summary>
