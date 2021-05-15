@@ -1,9 +1,12 @@
 <!doctype html> <html><head>
   <meta charset=utf-8>
   <meta name=viewport content="width=device-width, initial-scale=1">
-  <title>Home - David Richter</title>
-  <link rel="shortcut icon" href="https://drcicero.github.io/avatar.png">
-  <link rel="alternate" type="application/atom+xml" href="https://drcicero.github.io/feed.atom" title="Atom Feed">
+  
+  
+
+  <title>Welcome</title>
+  <link rel="shortcut icon" href="http://localhost:8000/avatar.png">
+  <link rel="alternate" type="application/atom+xml" href="http://localhost:8000/feed.atom" title="Atom Feed">
 
   <style>
 body {max-width:40em; min-height:100vh; margin:auto; padding: 0 1em;
@@ -18,27 +21,42 @@ h1 {padding:0; margin:0; font-weight:bold; font-size:1.5em}
 .block-list {list-style:none; padding:0}
 .block-list a {display:block; border:1px solid silver; margin:.5em 0; padding:0.5em 1em}
   </style>
-  <link rel=stylesheet async href="https://drcicero.github.io/style.css">
+  <style>code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+  <link rel=stylesheet async href="http://localhost:8000/style.css">
+  
+
+  
+  
 
 </head><body>
+
+  
   <header id=header>
-    <a href=https://drcicero.github.io/><h1>David Richter</h1><span>phd student, TU Darmstadt</span></a>
-<ul id="menu"><li><a href=https://drcicero.github.io/>Home</a></li>
-  <li><a href=https://drcicero.github.io/games/>Games</a></li>
-  <li><a href=https://drcicero.github.io/music.html>Music</a></li>
-  <li><a href=https://drcicero.github.io/feed.html>Feed</a></li></ul>
+    <a href=http://localhost:8000/><h1>David Richter</h1><span>phd student, TU Darmstadt</span></a>
+    <ul id=menu><li><a href="http://localhost:8000/cv.html">cv</a></li><li><a href="http://localhost:8000/">index</a></li><li><a href="http://localhost:8000/games/">games</a></li><li><a href="http://localhost:8000/music/">music</a></li></ul>
   </header>
 
-  <h1>Home</h1>
-  <div class="block-list">
-  <a href="posts/how-to-write-code.html"> 2017-10-17 · <b> How to write code</b></a>
-  <a href="posts/generics-and-abstraction.html"> 2016-09-18 · <b> Generics and Abstraction</b></a>
-  <a href="posts/syntax-highlighter-regular-expressions.html"> 2015-06-20 · <b> Syntax-Highlighting with Regular Expressions</b></a>
-  <a href="posts/java-incremental-compile.html"> 2015-06-19 · <b> Java Incremental Compile</b></a>
-</div>
+  <main>
+    <h1>Welcome</h1>
+    <p>Hello, I am David Richter and this is my website.</p>
+    <p>I am a PhD Student at <a href="https://www.stg.tu-darmstadt.de/staff/david/index.en.jsp">Software Technology, TU Darmstadt, Germany</a>. I am interested in programming languages, interpreters, compilers, types. My PhD is focussed on applying these things to smart contracts for blockchains.</p>
+    <p>(On a totally unrelated note, you can also find some browser games and midi music I wrote ages ago here on this website.)</p>
+    <hr />
+    <style>#langs img {width: 60px; height: 60px; object-position: center; object-fit: contain; padding: 0px 12px;}</style>
+    <p>Here is a test for you: Do you know the names of all of these cool programming language / implementations? Some are easier to recognise than others. 😁️</p>
+    <p id="langs">
+    <img src="./images/pl/agda.png"> <img src="./images/pl/bash.png"> <img src="./images/pl/clojure.png"> <img src="./images/pl/coq.png"> <img src="./images/pl/cpp.png"> <img src="./images/pl/csharp.png"> <img src="./images/pl/d.png"> <img src="./images/pl/erlang.png"> <img src="./images/pl/fsharp.png"> <img src="./images/pl/go.png"> <img src="./images/pl/haskell.png"> <img src="./images/pl/haxe.png"> <img src="./images/pl/js.png"> <img src="./images/pl/julia.png"> <img src="./images/pl/koka.png"> <img src="./images/pl/kotlin.png"> <img src="./images/pl/lua.png"> <img src="./images/pl/nim.png"> <img src="./images/pl/ocaml.png"> <img src="./images/pl/pharo.png"> <img src="./images/pl/python.png"> <img src="./images/pl/racket.png"> <img src="./images/pl/ruby.png"> <img src="./images/pl/rust.png"> <img src="./images/pl/scala.png"> <img src="./images/pl/sqlite.png"> <img src="./images/pl/swift.png"> <img src="./images/pl/zig.png">
+    </p>
+    
+    <ul class=block-list></ul>
+  </main>
 
-
-  <iframe src=https://drcicero.github.io/lastupdated.html style="width: 100%; border: none; height: 3em;"></iframe>
   <script async>
 (function () {"use strict";
   var mus = new Audio();
@@ -61,4 +79,6 @@ h1 {padding:0; margin:0; font-weight:bold; font-size:1.5em}
     musics[i].onclick = toggle;
 })();
   </script>
+  
+
 </body></html>
