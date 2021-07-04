@@ -1,0 +1,210 @@
+<!doctype html> <html><head>
+  <meta charset=utf-8>
+  <meta name=viewport content="width=device-width, initial-scale=1">
+  
+  
+
+  <title>David Richter – iconic math – james algebra</title>
+  <link rel="shortcut icon" href="https://drcicero.github.io/avatar.png">
+  <!-- <link rel="alternate" type="application/atom+xml" href="https://drcicero.github.io/feed.atom" title="Atom Feed"> -->
+
+  <style>
+body {max-width:40em; min-height:100vh; margin:auto; padding: 0 1em;
+  font:16px/1.5 "Roboto","Helvetica Neue",Helvetica,sans-serif}
+#menu {margin:auto; padding:0; margin-top:.5em}
+#menu > li > a {border:0}
+#menu > li {display:inline}
+#menu a {display:inline-block; padding:.5em}
+h1 {padding:0; margin:0; font-weight:bold; font-size:1.5em}
+#header {margin:auto; padding:1em}
+#header > a {padding:1em; display:inline-block}
+.block-list {list-style:none; padding:0}
+.block-list a {display:block; border:1px solid silver; margin:.5em 0; padding:0.5em 1em}
+  </style>
+  <style>code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+  <link rel=stylesheet async href="https://drcicero.github.io/style.css">
+  
+  <script src="https://drcicero.github.io//mathjax.js" type="text/javascript"></script>
+  
+
+</head><body>
+
+  
+  <header id=header>
+    <a href=https://drcicero.github.io/><h1>David Richter</h1><span>phd student, TU Darmstadt</span></a>
+    <ul id=menu><li><a href="https://drcicero.github.io/cv.html">cv</a></li><li><a href="https://drcicero.github.io/favs.html">favs</a></li><li><a href="https://drcicero.github.io/">index</a></li><li><a href="https://drcicero.github.io/games/">games</a></li><li><a href="https://drcicero.github.io/music/">music</a></li><li><a href="https://drcicero.github.io/posts/">posts</a></li></ul>
+  </header>
+
+  <main>
+    <h1>iconic math – james algebra</h1>
+    <p>iconic math is something weird and beautiful.</p>
+    <p>in this post we look at what i think is called the arithmetic interpretation of james algebra [Iconic Arithmetic I, Iconic Arithmetic III], a particular interpretation of a particular form of iconic math.</p>
+    <p>an expression of james algebra is formed by well-bracketed strings with three kinds of brackets – angle, round and square <code>()[]&lt;&gt;</code>. further, we may use letters to represent variables <code>a</code>, <code>b</code>, <code>c</code>, …, e.g., variables in the standard sense as placeholders for other james algebra terms.</p>
+    <p>we may denote from time to time the empty term “<code></code>” also with <em>void</em> as to make it obvious to the reader that we did not just forget something, but that we actually meant nothing. thereby we also avoiding having to put every expression in quotes.</p>
+    <p>as a grammar:</p>
+    <pre><code>
+    t ::= void | t t | [t] | (t) | &lt;t&gt;</code></pre>
+    <p>for example, “<code>(() [] &lt;&gt;) [[()] &lt;&gt;]</code>” is a term of james algebra, just as “<code>() () () ()</code>”, and “<code>a b a (a) &lt;a&gt;</code>”, and the empty term “<code></code>”.</p>
+    <p>james algebra has three axioms, called inversion, arrangement, and reflection:</p>
+    <ul>
+    <li>arrangement allows us to distribute square over round brackets.</li>
+    <li>inversion allows us to cancel a round with a square bracket.</li>
+    <li>reflection allows us to cancel a term with its angle bracket.</li>
+    </ul>
+    <p>as equations:</p>
+    <pre><code>
+    (a [b c]) = (a [b]) (a [c])     (arrangement)
+    ([a])     = [(a)] = a           (inversion)
+    a &lt;a&gt;     = void                (reflection)
+
+    axioms of james algebra</code></pre>
+    <p>additionally, let me confront you with the following pseudo axioms.</p>
+    <p>sequences in james algebra have no order, therefore you might want to consider commutativity an axiom. yet, as far as i understand, in james algebra it is preferred to think of commutativity of terms not as an axiom, but instead that we have to choose an order to write them down as a mishap of reality. for now i shall call <em>commutativity</em> a pseudo axiom, so we at least do not forget it.</p>
+    <p>i shall further comment, that the fact that <em>void</em> actually represents the empty term means that you can introduce and eliminate it everywhere, thereby generating another pseudo axiom. this is now definitely a mishap of reality as the symbol <em>void</em> really represents nothing and we only write it in cases where we think it would make a reader think that we forgot something. (this pseudo axiom has the unavoidable problem that one side of the equation is empty, so we use quotes just here.)</p>
+    <pre><code>
+    &#39;a b&#39;     = &#39;b a&#39;               (commutativity)
+    &#39;&#39;        = void                (identity)
+
+    pseudo axioms of james algebra</code></pre>
+    <h1 id="arithmetic-interpretation">arithmetic interpretation</h1>
+    <p>every real number can be given a james expression to represent it. however, not every james expression represents an real number. if i understand correctly they can also represent complex, and even surreal numbers (e.g., there is a infinity in there), and more. still, we may give many james expressions an arithmetic interpretation in the following way:</p>
+    <table style="width:96%;">
+    <colgroup>
+    <col style="width: 13%" />
+    <col style="width: 11%" />
+    <col style="width: 22%" />
+    <col style="width: 13%" />
+    <col style="width: 22%" />
+    <col style="width: 12%" />
+    </colgroup>
+    <thead>
+    <tr class="header">
+    <th>boundary</th>
+    <th style="text-align: left;">unit</th>
+    <th>interpretation</th>
+    <th>operator</th>
+    <th>interpretation</th>
+    <th style="text-align: left;">name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="odd">
+    <td>sequence</td>
+    <td style="text-align: left;"><em>void</em></td>
+    <td><span class="math inline">\(0\)</span></td>
+    <td><code>a b</code></td>
+    <td><span class="math inline">\(a+b\)</span></td>
+    <td style="text-align: left;">addition</td>
+    </tr>
+    <tr class="even">
+    <td>angle</td>
+    <td style="text-align: left;"><code>&lt;&gt;</code></td>
+    <td><span class="math inline">\(0\)</span></td>
+    <td><code>&lt;a&gt;</code></td>
+    <td><span class="math inline">\(-a\)</span></td>
+    <td style="text-align: left;">negation</td>
+    </tr>
+    <tr class="odd">
+    <td>round</td>
+    <td style="text-align: left;"><code>()</code></td>
+    <td><span class="math inline">\(1\)</span></td>
+    <td><code>(a)</code></td>
+    <td><span class="math inline">\(\#^a\)</span></td>
+    <td style="text-align: left;">raise</td>
+    </tr>
+    <tr class="even">
+    <td>square</td>
+    <td style="text-align: left;"><code>[]</code></td>
+    <td><span class="math inline">\(-\infty\)</span></td>
+    <td><code>[a]</code></td>
+    <td><span class="math inline">\(log_\# a\)</span></td>
+    <td style="text-align: left;">lower</td>
+    </tr>
+    </tbody>
+    </table>
+    <p>in english, this means:</p>
+    <ul>
+    <li>sequence represent the sum of its content, for example <code>a b</code> represents a+b.</li>
+    <li>angle brackets represent negation of the content</li>
+    <li>round brackets represent raising the content to the power of a base</li>
+    <li>square brackets represent lowering of the content through logarithm of a base</li>
+    </ul>
+    <p>you may (as I did) wonder to what base (denoted hash <code>#</code>) we raise or lower… it seems to me that it does not matter much (well, except if you use base zero or one, which would collapse the raising and lowering), because the james expressions corresponding to arithmetic will never use an expression where the base (here called #) is still there!</p>
+    <p>james expressions that correspond to arithmetic seem to have a balancing number of raising and lowerings such that you can take many bases, as long as you always use the same base. i will use eulers number e in the following to check the translation to normal arithmetic with a calculator.</p>
+    <p>we complete the interpretation by giving the empty brackets a meaning.</p>
+    <ul>
+    <li>the empty angle bracket represents zero,</li>
+    <li>the empty round bracket represents one,</li>
+    <li>the empty square bracket represents negative infinity.</li>
+    <li>i have not yet seen it said explicitly, but this should mean that the empty term <code></code> = <em>void</em> also represents 0.</li>
+    </ul>
+    <p>we can now show how addition, multiplication and exponentiation are represented in james algebra:</p>
+    <pre><code>
+          a     b     =             a + b      = a + b
+       ( [a]   [b] )  =    e^(   ln a + ln b)  = a * b
+      (([[a]]  [b] )) = e^(e^(ln ln a + ln b)) = a ^ b</code></pre>
+    <p>further, we can show subtraction, division and roots:</p>
+    <pre><code>
+          a   &lt; b &gt;   =             a - b      = a - b
+       ( [a]  &lt;[b]&gt;)  =    e^(   ln a - ln b)  = a / b
+      (([[a]] &lt;[b]&gt;)) = e^(e^(ln ln a - ln b)) = a ^ (1/b)</code></pre>
+    <p>the first thing that occurs to me is that in the above table you can see that in math we do actually already something similar. namely, we are to lazy to design and consistently always use a new symbol for roots as the inverse of powers. it is just more convenient to reuse the inverse operator of the previous operator <span class="math inline">\(x^{\frac{1}{3}}\)</span> at the appropiate position instead of a proper root operator <span class="math inline">\(\sqrt[3]{x}\)</span>.</p>
+    <p>the whole thing further reminds me of the ladder of hyperoperators [Ladder of Hyperoperators], e.g., starting with integer successor (+1), we can define addition, multiplication, exponential, tetration, … as n-repeated application of the previous operation. wait, did i say tetration? yes, the interesting thing is that the hyperoperators do not stop at exponentiation, although the higher hyperoperators are not known as much as the first four.</p>
+    <p>wikipedia tells me that next to the hyperoperators there are also the commutative hyperoperators, which are more like the james algebra.</p>
+    <p>let me also show you a few integers in james algebra:</p>
+    <pre><code>
+        ()()()() =  4
+        ()()()   =  3
+        ()()     =  2
+        ()       =  1
+        void     =  0
+        &lt;()&gt;     = -1
+        &lt;()()&gt;   = -2
+        &lt;()()()&gt; = -3</code></pre>
+    <p>yes! you got it. james algebra is like math with unary numbers :) this is related to one of the most prominent claims of iconic math, namely that we should at least be able to visually reason about the terms. that is why <em>iconic</em> math in contrast to standard <em>symbolic</em> math may represents integers in unary, such that addition corresponds to putting to unary numbers next to each other. addition in unary is basically a no-op.</p>
+    <p>besides ascii representations of terms, there are also graphical variants using 2d circles and 3d boxes and more.</p>
+    <p>in the book [Iconic Arithmetic I], the chapter preface and context at the beginning are used to how explain how things should be. this was only blablabla for me at first. only after they start telling you how things actually are, and how they related to the normal math we know, i could make sense of this. i recommend reading chapter 5 and 6 first, and only after that revisit the things before, because its only then, after knowing how james algebra works, that i could follow the part on philosophy and rational of why they are like this.</p>
+    <p>on the other hand this post might already contain sufficient information to get the reasoning behind the preface and context. :)</p>
+    <p>links:</p>
+    <ul>
+    <li>Iconic Arithmetic I, William Bricken. <a href="http://iconicmath.com/wordpress/wp-content/mymedia/IconicArithmeticONEchs1-5-6-15public.210315.pdf">official pdf sample excerpt</a></li>
+    <li>Iconic Arithmetic II, William Bricken. the sample pdf link to book 2 is sadly broken.</li>
+    <li>Iconic Arithmetic III, William Bricken. <a href="http://iconicmath.com/wordpress/wp-content/mymedia/IconicArithmeticTHREEchs31-38-45public.210315.pdf">official pdf sample excerpt</a></li>
+    <li><a href="https://iconicmath.com/algebra/james/">https://iconicmath.com/algebra/james/</a></li>
+    <li><a href="https://en.m.wikipedia.org/wiki/Hyperoperation#Examples">Ladder of Hyperoperators, Wikipedia.</a></li>
+    </ul>
+    
+    <ul class=block-list></ul>
+  </main>
+
+  <script async>
+(function () {"use strict";
+  var mus = new Audio();
+
+  function toggle(e) {
+    if (mus.getAttribute("src") !== this.href) {
+      var musics = document.getElementsByClassName("playing");
+      for (var i=0; i<musics.length; i++) musics[i].classList.remove("playing");
+      mus.src = this.href;
+      mus.play(); this.classList.add("playing");
+
+    } else if (mus.paused || mus.ended) {mus.play(); this.classList.add("playing");}
+    else {mus.pause(); this.classList.remove("playing");}
+
+    return false;
+  }
+
+  var musics = document.getElementsByClassName("music-link");
+  for (var i=0; i<musics.length; i++)
+    musics[i].onclick = toggle;
+})();
+  </script>
+  
+
+</body></html>
