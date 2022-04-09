@@ -4,7 +4,7 @@
   
   
 
-  <title>David Richter – Posts</title>
+  <title>David Richter – generalized function composition for readable pointfree functions</title>
   <link rel="shortcut icon" href="https://drcicero.github.io/avatar.png">
   <!-- <link rel="alternate" type="application/atom+xml" href="https://drcicero.github.io/feed.atom" title="Atom Feed"> -->
 
@@ -42,12 +42,48 @@ ul.task-list{list-style: none;}
   </header>
 
   <main>
-    <h1>Posts</h1>
+    <h1>generalized function composition for readable pointfree functions</h1>
+    <p>let <code>o</code> be the function composition function, and <code>.</code> the corresponding infix binary operator, i.e.:</p>
+    <pre><code>
+    o g f := g . f := \x. g (f x)</code></pre>
+    <p>let <code>f^n</code> be the n-th repitition of the function f, i.e.:</p>
+    <pre><code>
+    f^0    := id
+    f^(Sn) := f . f^n</code></pre>
+    <p>let <code>f_n</code> be the n-th shift of the function f, i.e.:</p>
+    <pre><code>
+    f_0     := id
+    f_(S n) := o^n f</code></pre>
+    <p>observe</p>
+    <ol type="1">
+    <li>repeating composition increases bracket width</li>
+    </ol>
+    <pre><code>
+    o^0 = id          = \a b c d e f g. a (b) c d e f g
+    o^1 = o           = \a b c d e f g. a (b c) d e f g
+    o^2 = o.o         = \a b c d e f g. a (b c d) e f g
+    o^3 = o.o.o       = \a b c d e f g. a (b c d e) f g
+    o^4 = o.o.o.o     = \a b c d e f g. a (b c d e f) g</code></pre>
+    <ol start="2" type="1">
+    <li>nesting composition increases bracket offset</li>
+    </ol>
+    <pre><code>
+    o^0 o = o               = \a b c d e f g. a (b c) d e f g
+    o^1 o = o o             = \a b c d e f g. a b (c d) e f g
+    o^2 o = o (o o)         = \a b c d e f g. a b c (d e) f g
+    o^3 o = o (o (o o))     = \a b c d e f g. a b c d (e f) g
+    o^4 o = o (o (o (o o))) = \a b c d e f g. a b c d (e f) g</code></pre>
+    <p>therefore <code>o^x o^w</code> is an arbitrary bracket with offset <code>x</code> and width <code>w</code>, for example:</p>
+    <pre><code>
+    o^2 o^3 = at place 2, take 3 arguments
+            = \a b c d e f g. a b c (d e f) g</code></pre>
+    <p>if we need multiple brackets, we can join them with o… for example, we might want to write the compositon of multiple binary functions in pointfree</p>
+    <pre><code>
+    \f g h x y z. (f x) (g y) (h z)  = o^4 o . o^2 o
+                                     = o^2 o . o^3 o</code></pre>
+    <p>I played with this using <a href="http://pointfree.io">http://pointfree.io/</a>.</p>
     
-    
-    <ul class=block-list><li><a href="https://drcicero.github.io/./posts/2021-07-04 iconic math james algebra.html">2021-07-04 iconic math james algebra</a></li>
-    <li><a href="https://drcicero.github.io/./posts/2022-08-09 generalised function composition for readable pointfree functions.html">2022-08-09 generalised function composition for readable pointfree functions</a></li>
-    </ul>
+    <ul class=block-list></ul>
   </main>
 
   <script async>
