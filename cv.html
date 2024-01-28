@@ -22,12 +22,165 @@ h1 {padding:0; margin:0; font-weight:bold; font-size:1.5em}
 .block-list {list-style:none; padding:0}
 .block-list a {display:block; border:1px solid silver; margin:.5em 0; padding:0.5em 1em}
   </style>
-  <style>code{white-space: pre-wrap;}
+  <style>html {
+  color: #1a1a1a;
+  background-color: #fdfdfd;
+}
+body {
+  margin: 0 auto;
+  max-width: 36em;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  hyphens: auto;
+  overflow-wrap: break-word;
+  text-rendering: optimizeLegibility;
+  font-kerning: normal;
+}
+@media (max-width: 600px) {
+  body {
+    font-size: 0.9em;
+    padding: 12px;
+  }
+  h1 {
+    font-size: 1.8em;
+  }
+}
+@media print {
+  html {
+    background-color: white;
+  }
+  body {
+    background-color: transparent;
+    color: black;
+    font-size: 12pt;
+  }
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2, h3, h4 {
+    page-break-after: avoid;
+  }
+}
+p {
+  margin: 1em 0;
+}
+a {
+  color: #1a1a1a;
+}
+a:visited {
+  color: #1a1a1a;
+}
+img {
+  max-width: 100%;
+}
+svg {
+  height: auto;
+  max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 1.4em;
+}
+h5, h6 {
+  font-size: 1em;
+  font-style: italic;
+}
+h6 {
+  font-weight: normal;
+}
+ol, ul {
+  padding-left: 1.7em;
+  margin-top: 1em;
+}
+li > ol, li > ul {
+  margin-top: 0;
+}
+blockquote {
+  margin: 1em 0 1em 1.7em;
+  padding-left: 1em;
+  border-left: 2px solid #e6e6e6;
+  color: #606060;
+}
+code {
+  font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+  font-size: 85%;
+  margin: 0;
+  hyphens: manual;
+}
+pre {
+  margin: 1em 0;
+  overflow: auto;
+}
+pre code {
+  padding: 0;
+  overflow: visible;
+  overflow-wrap: normal;
+}
+.sourceCode {
+ background-color: transparent;
+ overflow: visible;
+}
+hr {
+  background-color: #1a1a1a;
+  border: none;
+  height: 1px;
+  margin: 1em 0;
+}
+table {
+  margin: 1em 0;
+  border-collapse: collapse;
+  width: 100%;
+  overflow-x: auto;
+  display: block;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+  margin-bottom: 0.75em;
+}
+tbody {
+  margin-top: 0.5em;
+  border-top: 1px solid #1a1a1a;
+  border-bottom: 1px solid #1a1a1a;
+}
+th {
+  border-top: 1px solid #1a1a1a;
+  padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+  padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+  margin-bottom: 4em;
+  text-align: center;
+}
+#TOC li {
+  list-style: none;
+}
+#TOC ul {
+  padding-left: 1.3em;
+}
+#TOC > ul {
+  padding-left: 0;
+}
+#TOC a:not(:hover) {
+  text-decoration: none;
+}
+code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
+/* The extra [class] is a hack that increases specificity enough to
+   override a similar rule in reveal.js */
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  font-size: inherit;
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
 </style>
   <link rel=stylesheet async href="https://drcicero.github.io/style.css">
   
@@ -40,59 +193,218 @@ ul.task-list{list-style: none;}
   <header id=header>
     <a href=https://drcicero.github.io/><h1>David Richter</h1><span>phd student, TU Darmstadt</span></a>
     <ul id=menu><li><a href="https://drcicero.github.io/cv.html">cv</a></li><li><a href="https://drcicero.github.io/favs.html">favs</a></li><li><a href="https://drcicero.github.io/">index</a></li><li><a href="https://drcicero.github.io/games/">games</a></li><li><a href="https://drcicero.github.io/music/">music</a></li><li><a href="https://drcicero.github.io/posts/">posts</a></li></ul>
+<!--    -->
     
   </header>
 
   <main>
     <h1>Curriculum Vitae</h1>
-    <h2>
-    Education
-    </h2>
-    <p>now, <a href="https://www.stg.tu-darmstadt.de/staff/david/index.en.jsp">PhD Student, Software Technology, TU Darmstadt, Germany</a></p>
-    <p>2019, MSc Computer Science, TU Darmstadt<br> Thesis: <i>Asynchronous and Incremental Abstractions in Synchronous Systems</i></p>
-    <p>2017, BSc Computer Science, TU Darmstadt<br> Thesis: <i>Reactive Programming and Garbage Collection on the Web</i></p>
-    <h2>
-    Research
-    </h2>
+    <h2 id="education">Education</h2>
+    <ul>
+    <li><p>now,
+    <a href="https://www.stg.tu-darmstadt.de/staff/david/index.en.jsp">PhD
+    Student, Software Technology, TU Darmstadt, Germany</a></p></li>
+    <li><p>2019, MSc Computer Science, TU Darmstadt<br> Thesis:
+    <i>Asynchronous and Incremental Abstractions in Synchronous
+    Systems</i></p></li>
+    <li><p>2017, BSc Computer Science, TU Darmstadt<br> Thesis:
+    <i>Reactive Programming and Garbage Collection on the
+    Web</i></p></li>
+    </ul>
+    <h2 id="research">Research</h2>
     <p>Research Assistant</p>
-    <p>ECOOP 2022. <br>     <a href="https://2022.ecoop.org/details/ecoop-2022-papers/28/Prisma-A-tierless-language-for-enforcing-contract-client-protocols-in-decentralized-">Prisma: A tierless language for enforcing contract-client protocols in decentralized apps</a>. <br>     <i>David Richter</i>, David Kretler, Pascal Weisenburger, <br>     Guido Salvaneschi, Sebastian Faust, Mira Mezini. <br>     <a href="https://arxiv.org/pdf/2205.07780.pdf">(tech-report)</a> <a href="https://github.com/stg-tud/prisma">(code)</a></p>
-    <p>ECOOP 2021. Distinguished Paper. <br>     <a href="https://2021.ecoop.org/details/ecoop-2021-ecoop-research-papers/9/Multiparty-Languages-the-Choreographic-and-Multitier-Cases">Multiparty Languages: the Choreographic and Multitier Cases</a>. <br>     Saverio Giallorenzo, Fabrizio Montesi, Marco Peressotti, <br>     <i>David Richter</i>, Guido Salvaneschi, Pascal Weisenburger. <br>     <a href="https://2021.ecoop.org/details/ecoop-2021-ecoop-research-papers/9/Multiparty-Languages-the-Choreographic-and-Multitier-Cases">(pdf)</a> <a href="https://youtube.com/watch?v=zx07I-f7ZME">(video)</a></p>
-    <p>REBLS 2019. <br>     <a href="https://2019.splashcon.org/details/rebls-2019-papers/3/Turning-Unobservable-into-Unreachable-Dynamic-Reactive-Programming-without-Leaks"><i>Turning Unobservable into Unreachable: Dynamic Reactive Programming without Leaks</i></a>. <br>     <i>David Richter</i>, Ragnar Mogk. <br>     <a href="https://2019.splashcon.org/details/rebls-2019-papers/3/Turning-Unobservable-into-Unreachable-Dynamic-Reactive-Programming-without-Leaks">(pdf)</a></p>
+    <ul>
+    <li><p>ECOOP 2023.
+    <a href="https://2023.ecoop.org/details/ecoop-2023-papers/40/A-Direct-Style-Effect-Notation-for-Sequential-and-Parallel-Programs">A
+    Direct-Style Effect Notation for Sequential and Parallel
+    Programs</a>. <em>David Richter</em>, Timon Böhler, Pascal
+    Weisenburger, Mira Mezini.<br>
+    <a href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ECOOP.2023.25">(paper)</a>
+    <a href="https://drops.dagstuhl.de/entities/document/10.4230/DARTS.9.2.17">(artfact)</a>
+    <a href="https://github.com/stg-tud/parseq-notation">(code)</a>
+    <a href="https://arxiv.org/abs/2305.08496">(arxiv)</a></p></li>
+    <li><p>FTfJP 2023.
+    <a href="https://2023.ecoop.org/details/FTfJP-2023/3/Using-Rewrite-Strategies-for-Efficient-Functional-Automatic-Differentiation">Using
+    Rewrite Strategies for Efficient Functional Automatic
+    Differentiation</a>. Timon Böhler, <em>David Richter</em>, Mira
+    Mezini.<br>
+    <a href="https://dl.acm.org/doi/10.1145/3605156.3606456">(acm)</a>
+    <a href="https://arxiv.org/abs/2307.02447">(arxiv)</a></p></li>
+    <li><p>TOPLAS 2023.
+    <a href="https://2022.ecoop.org/details/ecoop-2022-papers/28/Prisma-A-tierless-language-for-enforcing-contract-client-protocols-in-decentralized-">Prisma:
+    A tierless language for enforcing contract-client protocols in
+    decentralized apps</a>. <em>David Richter</em>, David Kretzler,
+    Pascal Weisenburger, Guido Salvaneschi, Sebastian Faust, Mira
+    Mezini.<br>
+    <a href="https://dl.acm.org/doi/10.1145/3604629">(acm)</a>
+    <a href="https://github.com/stg-tud/prisma">(code)</a></p></li>
+    <li><p>ECOOP 2022.
+    <a href="https://2022.ecoop.org/details/ecoop-2022-papers/28/Prisma-A-tierless-language-for-enforcing-contract-client-protocols-in-decentralized-">Prisma:
+    A tierless language for enforcing contract-client protocols in
+    decentralized apps (Extended Artifact)</a>. <em>David Richter</em>,
+    David Kretzler, Pascal Weisenburger, Guido Salvaneschi, Sebastian
+    Faust, Mira Mezini.<br>
+    <a href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ECOOP.2022.35">(paper)</a>
+    <a href="https://arxiv.org/pdf/2205.07780.pdf">(arxiv / extended
+    version)</a>
+    <a href="https://drops.dagstuhl.de/entities/document/10.4230/DARTS.8.2.16">(artifact)</a></p></li>
+    <li><p>ECOOP 2021. Distinguished Paper.
+    <a href="https://2021.ecoop.org/details/ecoop-2021-ecoop-research-papers/9/Multiparty-Languages-the-Choreographic-and-Multitier-Cases">Multiparty
+    Languages: the Choreographic and Multitier Cases (Pearl)</a>.
+    Saverio Giallorenzo, Fabrizio Montesi, Marco Peressotti, <em>David
+    Richter</em>, Guido Salvaneschi, Pascal Weisenburger.<br>
+    <a href="https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ECOOP.2021.22">(paper)</a>
+    <a href="https://youtube.com/watch?v=zx07I-f7ZME">(video)</a></p></li>
+    <li><p>REBLS 2019.
+    <a href="https://2019.splashcon.org/details/rebls-2019-papers/3/Turning-Unobservable-into-Unreachable-Dynamic-Reactive-Programming-without-Leaks">Turning
+    Unobservable into Unreachable: Dynamic Reactive Programming without
+    Leaks</a>. <em>David Richter</em>, Ragnar Mogk.<br>
+    <a href="https://2019.splashcon.org/details/rebls-2019-papers/3/Turning-Unobservable-into-Unreachable-Dynamic-Reactive-Programming-without-Leaks">(pdf)</a></p></li>
+    </ul>
     <p>Student Research Assistant</p>
-    <p>LIVE 2018. <br>     <a href="https://2018.splashcon.org/details/live-2018-papers/10/From-Debugging-Towards-Live-Tuning-of-Reactive-Applications"><i>From Debugging Towards Live Tuning of Reactive Applications</i></a>. <br>     Ragnar Mogk, Pascal Weisenburger, Julian Haas, <br>     <i>David Richter</i>, Guido Salvaneschi, Mira Mezini. <br>     <a href="http://www.st.informatik.tu-darmstadt.de/preprints/From-Debugging-Towards-Live-Tuning-of-Reactive-Applications.pdf">(pdf)</a></p>
-    <h2>
-    Projects
-    </h2>
-    <p>iBlockchain (11/2018 - 09/2022), Federal Ministry of Education and Research (BMBF). <a href="https://www.forschung-it-sicherheit-kommunikationssysteme.de/projekte/iblockchain">(BMBF page)</a>, <a href="https://www.informatik.tu-darmstadt.de/cac/projects_partners/ongoing_projects_cac/iblockchain_cac/index.en.jsp">(TU Darmstadt page)</a>, <a href="https://iblockchain-projekt.de/">(project page)</a>.</p>
-    <h2>
-    Teaching
-    </h2>
+    <ul>
+    <li>LIVE 2018.
+    <a href="https://2018.splashcon.org/details/live-2018-papers/10/From-Debugging-Towards-Live-Tuning-of-Reactive-Applications">From
+    Debugging Towards Live Tuning of Reactive Applications</a>. Ragnar
+    Mogk, Pascal Weisenburger, Julian Haas, <em>David Richter</em>,
+    Guido Salvaneschi, Mira Mezini.<br>
+    <a href="http://www.st.informatik.tu-darmstadt.de/preprints/From-Debugging-Towards-Live-Tuning-of-Reactive-Applications.pdf">(pdf)</a></li>
+    </ul>
+    <h2 id="projects">Projects</h2>
+    <ul>
+    <li>iBlockchain (11/2018 - 09/2022), Federal Ministry of Education
+    and Research (BMBF).
+    <a href="https://www.forschung-it-sicherheit-kommunikationssysteme.de/projekte/iblockchain">(BMBF
+    page)</a>
+    <!--  <a href="https://www.informatik.tu-darmstadt.de/cac/projects_partners/ongoing_projects_cac/iblockchain_cac/index.en.jsp">(TU Darmstadt page)</a>,-->
+    <!--  <a href="https://iblockchain-projekt.de/">(project page)</a>.--></li>
+    </ul>
+    <h2 id="teaching">Teaching</h2>
     <style>
     table { border-spacing: 0 }
     td { border-top: 1px solid black; padding: 5px }
     </style>
-    <p>Theses</p>
-    <p>2021/22 Winter (ongoing). Daniel Manninger.<br>     Typed Thinking Like Transformers.<br>     Bachelor thesis. Supervisor: David Richter, Examiner: Mira Mezini.<br> 2021/22 Winter. Timon Böhler.<br>     Differential Programming in an Array Language.<br>     Bachelor thesis. Supervisor: David Richter, Examiner: Mira Mezini.<br> 2021 Summer. Daniel Stricker.<br>     Comparing implementation strategies for differentiable programming.<br>     Bachelor thesis. Supervisor: David Richter, Examiner: Mira Mezini.<br> 2020 Summer. Stefan Sauer.<br>     Functional and Reactive Programming for Smart Contracts.<br>     Bachelor thesis. Supervisor: David Richter, Examiner: Mira Mezini.<br> 2019/20 Winter. Fabio d’Aquino Hilt.<br>     Reactive Programming for Smart Contracts.<br>     Bachelor thesis. Supervisor: David Richter, Examiner: Mira Mezini.</p>
+    <p>Theses Supervision</p>
+    <ul>
+    <li><p>Bachelor thesis: <em>WIP: On Lambda Calculus and Program
+    Synthesis.</em> Supervisor: David Richter. Examiner: Mira Mezini.
+    Winter 2023/24.</p></li>
+    <li><p>Master thesis: <em>WIP: On Functional, Choreographic
+    Programming and Session Types.</em> Supervisor: David Richter.
+    Examiner: Mira Mezini. Winter 2023/24.</p></li>
+    <li><p>Master thesis: <em>An Optimizing Compiler for a
+    Differentiable Array Programming Language.</em> Student: Timon
+    Böhler. Supervisor: David Richter. Examiner: Mira Mezini. Summer
+    2023.</p></li>
+    <li><p>Master thesis: <em>Type Inference for Tractable Probabilistic
+    Programming.</em> Student: Frank Pfirmann Supervisor: David Richter,
+    Viktor Pfanschilling. Examiner: Mira Mezini. Winter
+    2022/23.</p></li>
+    <li><p>Master thesis: <em>Towards an End-to-End Neuro-symbolic DSL
+    of Transformers.</em> Student: Daniel Manninger. Supervisor: David
+    Richter. Examiner: Mira Mezini. Winter 2021/22.</p></li>
+    <li><p>Bachelor thesis: <em>Differential Programming in an Array
+    Language.</em> Student: Timon Böhler. Supervisor: David Richter.
+    Examiner: Mira Mezini. Winter 2021/22.</p></li>
+    <li><p>Bachelor thesis: <em>Comparing implementation strategies for
+    differentiable programming.</em> Student: Daniel Stricker.
+    Supervisor: David Richter. Examiner: Mira Mezini. Summer
+    2021.</p></li>
+    <li><p>Bachelor thesis: <em>Functional and Reactive Programming for
+    Smart Contracts.</em> Student: Stefan Sauer. Supervisor: David
+    Richter. Examiner: Mira Mezini. Summer 2020.</p></li>
+    <li><p>Bachelor thesis: <em>Reactive Programming for Smart
+    Contracts.</em> Student: Fabio d’Aquino Hilt. Supervisor: David
+    Richter. Examiner: Mira Mezini. Winter 2019/20.</p></li>
+    </ul>
     <p>Teaching Assistant</p>
-    <p>2022 Summer.<br> Project <abbr title="Implementation of Modern Programming Languages">IMPL</abbr>. Advised topic ‘Differential programming’.<br></p>
-    <p>2021/22 Winter.<br> Project <abbr title="Software Engineering Project">SEP</abbr>. Advising team <a href="http://stg-tud.github.io/sep/projects/">CAQuAppsel</a>.<br> Seminar <abbr title="Seminar Software Engineering for Artificial Intelligence">SE4AI</abbr>. Advising.<br></p>
-    <p>2021 Summer.<br> Project <abbr title="Implementation of Modern Programming Languages">IMPL</abbr>. Advised topic ‘Differential programming’.<br> Seminar <abbr title="Design and Implementation of Modern Programming Languages">DaIMPL</abbr>. Advised topic ‘Differential programming’.<br></p>
-    <p>2020/21 Winter.<br> Project <abbr title="Software Engineering Project">SEP</abbr>. Advised team <a href="http://stg-tud.github.io/sep/projects/">Devoilapers</a>.<br> Project <abbr title="Implementation of Modern Programming Languages">IMPL</abbr>. Advised topic ‘Metaprogramming’.<br> Seminar <abbr title="Design andImplementation of Modern Programming Languages">DaIMPL</abbr>. Advised topic ‘Metaprogramming’.<br></p>
-    <p>2020 Summer.<br> Project <abbr title="Implementation of Modern Programming Languages">IMPL</abbr>. Advised topic ‘Smart contract programming languages’.<br> Seminar <abbr title="Design and Implementation of Modern Programming Languages">DaIMPL</abbr>. Advised topic ‘Smart contract programming languages’.<br></p>
-    <p>2019/20 Winter.<br> Project <abbr title="Software Engineering Project">SEP</abbr>. Advised team <a href="http://stg-tud.github.io/sep/projects/">Die ConTrolle</a>.<br> Project <abbr title="Implementation of Modern Programming Languages">IMPL</abbr>. Advised topic ‘Smart contract programming languages’.<br> Seminar <abbr title="Design and Implementation of Modern Programming Languages">DaIMPL</abbr>. Advised topic ‘Smart contract programming languages’.<br></p>
+    <ul>
+    <li><p>Project IMPL (Implementation of Modern Programming
+    Languages). Topic Instructor for Winter 2023/24, Summer 2023, Winter
+    2022/23, Summer 2021, Summer 2020, Winter 2019/20.</p>
+    <!--
+    - 2023/24 Winter - Probabilistic Programming
+    - 2023/24 Winter - Modular Programs with Effects
+    - 2023 Summer - Program Synthesis
+    - 2023 Summer - Array Programming Compilation
+    - 2022/23 Winter - Differential Privacy
+    - 2021 Summer - Differential programming
+    - 2020 Summer - Smart contract programming languages
+    - 2019/20 Winter - Smart contract programming languages
+    --></li>
+    <li><p>Seminar DaIMPL (Design and Implementation of Modern
+    Programming Languages). Topic Instructor for Winter 2023/24, Summer
+    2023, Summer 2022, Winter 2022/23, Summer 2021, Winter 2020/21,
+    Winter 2019/20.</p>
+    <!--
+    - 2023/24 Winter - Probabilistic Programming
+    - 2023 Summer - Verifying Probabilistic Programs
+    - 2023 Summer - Cyclic Proofs
+    - 2023 Summer - Tensor Compilation
+    - 2022 Summer - Automatic Differentation
+    - 2022/23 Winter - Differential Privacy
+    - 2022/23 Winter - Probabilistic Programming
+    - 2022/23 Winter - Backpropagation
+    - 2022 Summer - 
+    - 2021/22 Winter - 
+    - 2021 Summer - The Julia language
+    - 2021 Summer - Differential programming
+    - 2020/21 Winter - A DSL for smart contracts
+    - 2020/21 Winter - Smart Contract languages
+    - 2020/21 Winter - A Survey on Macros and Metaprogramming
+    - 2020 Summer - canceled
+    - 2019/20 Winter - Smart contract programming languages
+    --></li>
+    <li><p>Seminar SE4AI (Seminar Software Engineering for Artificial
+    Intelligence). Topic Instructor for Winter 2021/22.</p></li>
+    <li><p>Project SEP (Software Engineering Project):</p>
+    <ul>
+    <li>2023/24 Winter - topic ‘Project Specification Document’</li>
+    <li>2023/24 Winter - feedback for team
+    <a href="http://stg-tud.github.io/sep/projects/">Canvas 2.0</a></li>
+    <li>2022/23 Winter - feedback for team
+    <a href="http://stg-tud.github.io/sep/projects/">Tradevisori</a></li>
+    <li>2021/22 Winter - feedback for team
+    <a href="http://stg-tud.github.io/sep/projects/">CAQuAppsel</a></li>
+    <li>2020/21 Winter - feedback for team
+    <a href="http://stg-tud.github.io/sep/projects/">Devoilapers</a></li>
+    <li>2019/20 Winter - feedback for team
+    <a href="http://stg-tud.github.io/sep/projects/">Die
+    ConTrolle</a></li>
+    </ul></li>
+    </ul>
     <p>Student Teaching Assistant</p>
-    <p>2017 Summer, Concepts of Programming Languages, TU Darmstadt<br> 2016/17 Winter, Formal Methods for Software Development, TU Darmstadt<br> 2015 Summer, Functional and Object-Oriented Programming, TU Darmstadt</p>
-    <h2>
-    Academic Service
-    </h2>
-    <p>Scala 2019, <a href="https://2020.ecoop.org/committee/scala-2020-papers-organizing-committee">publicity chair</a></p>
-    <h2>
-    Projects
-    </h2>
-    <p><a href="https://github.com/drcicero/drx">drx</a>. Dynamic reactive programming without memory-leaks.</p>
-    <p><a href="https://github.com/drcicero/bibcleany">bibcleany</a>. Clean bibtex files by looking for matches on dblp.</p>
-    <p><a href="https://github.com/drcicero/beautiful-tucan">beautiful-tucan</a>. Inofficial week schedule for computer science students at TU Darmstadt.</p>
-    <p>Also, involved with <a href="https://www.rescala-lang.com/impressum">REScala</a>. Reactive programming in Scala.</p>
+    <ul>
+    <li>2017 Summer, Concepts of Programming Languages, TU
+    Darmstadt</li>
+    <li>2016/17 Winter, Formal Methods for Software Development, TU
+    Darmstadt</li>
+    <li>2015 Summer, Functional and Object-Oriented Programming, TU
+    Darmstadt</li>
+    </ul>
+    <h2 id="academic-service">Academic Service</h2>
+    <ul>
+    <li><p>ECOOP 2024,
+    <a href="https://2024.ecoop.org/committee/ecoop-2024-papers-extended-review-committee-and-external-reviewers">ERC</a>
+    &amp;
+    <a href="https://2024.ecoop.org/committee/ecoop-2024-artifact-evaluation-artifact-evaluation-committee">AEC</a></p></li>
+    <li><p>ECOOP 2023,
+    <a href="https://2023.ecoop.org/committee/ecoop-2023-research-papers-extended-review-committee">ERC</a></p></li>
+    <li><p>Scala 2019,
+    <a href="https://2020.ecoop.org/committee/scala-2020-papers-organizing-committee">publicity
+    chair</a></p></li>
+    </ul>
+    <h2 id="projects-1">Projects</h2>
+    <p><a href="https://github.com/drcicero/drx">drx</a>. Dynamic
+    reactive programming without memory-leaks.</p>
+    <p><a href="https://github.com/drcicero/bibcleany">bibcleany</a>.
+    Clean bibtex files by looking for matches on dblp.</p>
+    <p><a href="https://github.com/drcicero/beautiful-tucan">beautiful-tucan</a>.
+    Inofficial week schedule for computer science students at TU
+    Darmstadt.</p>
+    <p>Also, involved with
+    <a href="https://www.rescala-lang.com/impressum">REScala</a>.
+    Reactive programming in Scala.</p>
     
     <ul class=block-list></ul>
   </main>
