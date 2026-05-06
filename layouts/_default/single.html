@@ -1,0 +1,61 @@
+{{- define "main" }}
+
+<article>
+  <header>
+    <h1>{{ .Title }}</h1>
+    {{ if .IsPage }}<small>{{ .PublishDate | time.Format "2nd Jan 2006" }}</small>{{ end }}
+  </header>
+
+  <div>
+    {{ partial "anchored_headings.html" .Content }}
+  </div>
+
+  {{- $pages := union .RegularPages .Sections -}}
+
+  {{- $tablesort := .Params.tablesort | default (slice "reverse" "start" "final" "reverse") -}}
+  {{- range $tablesort -}}
+    {{- if eq . "reverse" -}}
+      {{- $pages = $pages.Reverse -}}
+    {{- else -}}
+      {{- $pages = $pages.ByParam . -}}
+    {{- end -}}
+  {{- end -}}
+  {{/* {{- range $pages -}}{{ .Title }}<br>{{- end -}}<br> */}}
+
+  {{ if not .Params.nolist }}
+  <div style="display: flex; width: 100%; gap: 0px 15px; flex-wrap: wrap; justify-content: left">
+    {{ range $page := $pages }}
+    {{ if not .Params.Hidden }}
+    <div style="display:flex;width:100%;padding:1em;border-top:1px solid silver">
+      <div style=flex:1>{{ .PublishDate | time.Format "2006-Jan-02" }}</div>
+      <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}" style=flex:4>
+      {{ .Title }}
+      </a>
+    </div>
+    {{ end }}
+    {{- end }}
+  </div>
+
+  <div style="display: flex; width: 100%; gap: 0px 15px; flex-wrap: wrap; justify-content: left">
+    {{ range $page := .Resources }}
+    
+    <div style=display:flex;width:100%>
+      <div style=flex:1>{{ .Title }}</div>
+      <audio style=flex:2 controls="" style="width:100%" src="{{ .Permalink }}"></audio>
+    </div>
+    {{if false}}
+    <article class=flex-entry style="width:10em">
+      {{ if .Params.icon -}}<div aria-hidden="true">
+        <style>svg.t{{ .Permalink | md5 }} { {{ if .Params.icon.style }}{{ .Params.icon.style | safeCSS }}{{ end }} }</style>
+        {{ partial "icons/icon" (dict "vendor" .Params.icon.vendor "name" .Params.icon.name "className" (add "t" (.Permalink | md5))) }}
+      </div>{{- end }}
+      <p style="">{{ .Title }}</p>
+      <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
+    </article>
+    {{ end }}
+    {{- end }}
+  </div>
+  {{ end }}
+</article>
+
+{{ end -}}{{/* end main */}}

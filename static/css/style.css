@@ -1,0 +1,31 @@
+/* font */
+body { font-family: inter, Roboto, sans; font-size: 2em; }
+
+/* layout */
+body { margin: 0; }
+body > * > * { max-width: 800px; margin: auto }
+nav { display: flex; justify-content: space-between; }
+nav > ul { list-style: none; display: flex; margin: 0 }
+nav > ul > li { display: inline-block; padding: .5em; margin: 0 }
+main { padding-top: 1pt; padding-bottom: 2em; }
+footer { padding-top: 2em; padding-bottom: 2em; }
+
+/* content */
+main ul, main ol { list-style-position: outside; margin-left: 1.5em; }
+h1, h2, h3 { font-weight: bold; letter-spacing: 0; margin-top: 1em; margin-bottom: 0 }
+h1 { font-size: 1.5em  }
+h2 { font-size: 1.25em }
+h3 { font-size: 1em    }
+li { margin: 0 } ul { margin-top: 1em }
+p { margin-top: 1em; margin-bottom: 0 }
+a { text-decoration: underline; }
+strong { font-weight: bold; }
+blockquote { padding: 0 1.5rem }
+figure { max-width: 10em; position: relative; left: 0; right: 0; margin: 1em auto; }
+figure img { border-radius: 100% }
+
+/* color */
+body { color: #111; background: #ccc; }
+body > main { background: #eee; }
+body > header { background: #a44; } body > header a { color: white; text-decoration: none }
+strong, a, h1, h2, h3, em { color: #a44; }
