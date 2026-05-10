@@ -1,5 +1,6 @@
 ---
 title: Impressum / Legal
+hiddenInList: true
 ---
 
 ### Contact
