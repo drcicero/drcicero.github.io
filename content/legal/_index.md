@@ -1,5 +1,5 @@
 ---
-title: Impressum / Legal
+title: Legal
 hiddenInList: true
 ---
 
