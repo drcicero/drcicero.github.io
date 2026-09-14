@@ -1,6 +1,7 @@
 ---
 title: Teaching
 layout: single
+weight: 30
 ---
 
 <!-- I usually supervise one or two project teams, and one or two theses per semester. -->

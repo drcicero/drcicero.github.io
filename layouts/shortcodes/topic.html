@@ -1,0 +1,20 @@
+{{- $iconParts := split (.Get "icon") ":" -}}
+{{- $vendor := index $iconParts 0 -}}
+{{- $name := index $iconParts 1 -}}
+{{- $icon := partial "icons/icon" (dict "vendor" $vendor "name" $name "className" "topic-icon") -}}
+{{- $arrow := partial "icons/icon" (dict "vendor" "tabler" "name" "outline/chevron-down" "className" "topic-arrow") -}}
+<div class="topic">
+<details>
+<summary>
+<span class="topic-icon-circle">{{ $icon }}</span>
+<span class="topic-text">
+<span class="topic-title">{{ .Get "title" }}</span>
+<span class="topic-motivation">{{ .Get "motivation" }}</span>
+</span>
+{{ $arrow }}
+</summary>
+<div class="topic-body">
+{{ .Inner }}
+</div>
+</details>
+</div>

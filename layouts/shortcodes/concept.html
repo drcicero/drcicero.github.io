@@ -1,0 +1,18 @@
+{{- $iconParts := split (.Get "icon") ":" -}}
+{{- $vendor := index $iconParts 0 -}}
+{{- $name := index $iconParts 1 -}}
+{{- $icon := partial "icons/icon" (dict "vendor" $vendor "name" $name "className" "concept-icon") -}}
+{{- $arrow := partial "icons/icon" (dict "vendor" "tabler" "name" "outline/chevron-down" "className" "concept-arrow") -}}
+{{- $body := .Page.RenderString (string .Inner) -}}
+<div class="concept">
+<details>
+<summary>
+<span class="concept-icon-circle">{{ $icon }}</span>
+<span class="concept-title">{{ .Get "title" }}</span>
+{{ $arrow }}
+</summary>
+<div class="concept-body">
+{{ $body }}
+</div>
+</details>
+</div>

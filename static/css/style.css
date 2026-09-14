@@ -3,6 +3,7 @@ body { font-family: inter, Roboto, sans; font-size: 2em; }
 
 /* layout */
 body { margin: 0; }
+body > * { padding-left: 1em; padding-right: 1em; box-sizing: border-box }
 body > * > * { max-width: 800px; margin: auto }
 nav { display: flex; justify-content: space-between; }
 nav > ul { list-style: none; display: flex; margin: 0 }
@@ -21,11 +22,76 @@ p { margin-top: 1em; margin-bottom: 0 }
 a { text-decoration: underline; }
 strong { font-weight: bold; }
 blockquote { padding: 0 1.5rem }
-figure { max-width: 10em; position: relative; left: 0; right: 0; margin: 1em auto; }
-figure img { border-radius: 100% }
+.intro { display: flex; flex-wrap: wrap; gap: 1.5em; align-items: flex-start; margin-bottom: 1em; }
+.intro .prose { flex: 1; min-width: 16em; }
+.intro .prose p:first-child { margin-top: 0; }
+figure.portrait { width: 9em; flex-shrink: 0; margin: 0 auto; text-align: center; }
+figure.portrait img { border-radius: 100%; width: 100% }
+figure.portrait figcaption { font-size: .8em; margin-top: .5em; }
+figure.portrait figcaption p { margin: .2em 0 0; }
+figure.portrait figcaption p:first-child { margin-top: 0; }
 
 /* color */
 body { color: #111; background: #ccc; }
 body > main { background: #eee; }
 body > header { background: #a44; } body > header a { color: white; text-decoration: none }
 strong, a, h1, h2, h3, em { color: #a44; }
+
+/* topic boxes */
+.topic { margin-top: 1em; }
+.topic summary {
+  cursor: pointer; list-style: none;
+  display: flex; align-items: center; gap: 1.5em;
+  background: #e0e0e0; border-radius: .3em; padding: .5em 1em;
+}
+.topic summary::-webkit-details-marker { display: none; }
+.topic-icon-circle {
+  background: #fff; border-radius: 50%;
+  width: 4.2em; height: 4.2em; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.topic-icon { width: 2.8em; height: 2.8em; }
+.topic-text { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: .15em; }
+.topic-title { font-weight: bold; }
+.topic-motivation { font-style: italic; color: #555; font-size: .85em; }
+.topic-arrow {
+  width: 2.4em; height: 2.4em; flex-shrink: 0; color: #555;
+  transition: transform .2s ease;
+}
+.topic details[open] > summary .topic-arrow { transform: rotate(180deg); }
+.topic details:not([open]) > summary:hover .topic-arrow { transform: rotate(20deg); }
+.topic details[open] > summary:hover .topic-arrow { transform: rotate(160deg); }
+.topic-body { border-left: .3em solid #e0e0e0; margin: 0 0 0 1.6em; padding: .5em 0 .8em 1em; }
+
+/* background concept toggles */
+.topic-background { margin-bottom: 1em; }
+.topic-background-label { font-weight: bold; font-size: .8em; text-transform: uppercase; letter-spacing: .05em; color: #777; margin-bottom: .3em; }
+.topic-background-items { display: flex; flex-direction: column; gap: .5em; }
+.concept { width: 100%; }
+.concept summary {
+  cursor: pointer; list-style: none;
+  display: flex; align-items: center; gap: .5em;
+  background: #d5d5d5; border-radius: .3em; padding: .3em .6em .3em .3em;
+  font-size: .8em; width: 100%; box-sizing: border-box;
+}
+.concept summary::-webkit-details-marker { display: none; }
+.concept-icon-circle {
+  background: #fff; border-radius: 50%;
+  width: 1.8em; height: 1.8em; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.concept-icon { width: 1.1em; height: 1.1em; }
+.concept-title { font-weight: bold; }
+.concept-arrow {
+  width: .9em; height: .9em; flex-shrink: 0; color: #555;
+  transition: transform .2s ease;
+}
+.concept details[open] > summary .concept-arrow { transform: rotate(180deg); }
+.concept details:not([open]) > summary:hover .concept-arrow { transform: rotate(20deg); }
+.concept details[open] > summary:hover .concept-arrow { transform: rotate(160deg); }
+.concept-body {
+  border-left: .2em solid #d5d5d5; margin: .3em 0 0 .9em;
+  padding: .3em 0 .3em .8em; font-size: .8em;
+}
+.concept-body pre { background: #ddd; padding: .5em; border-radius: .3em; overflow-x: auto; font-size: .85em; }
+.concept-body code { font-family: monospace; }

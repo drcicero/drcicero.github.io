@@ -1,0 +1,7 @@
+{{- $body := .Page.RenderString (string .Inner) -}}
+<figure class="portrait">
+<img src="{{ .Get "src" }}" alt="{{ .Get "alt" | default (.Get "src") }}">
+<figcaption>
+{{ $body }}
+</figcaption>
+</figure>

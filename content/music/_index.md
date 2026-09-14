@@ -1,6 +1,7 @@
 ---
 title: Music
 layout: single
+weight: 40
 ---
 
 After finishing high school and before university, I wrote some music for fun.

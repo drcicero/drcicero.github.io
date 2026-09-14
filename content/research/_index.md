@@ -1,6 +1,7 @@
 ---
 title: Research
 layout: single
+weight: 10
 ---
 
 ## Preprints
@@ -13,11 +14,30 @@ layout: single
   David **Richter**, Timon Böhler, Benedict Smit, Pascal Weisenburger, Mira Mezini. {{<br>}}
   [preprint](/preprints/2026-draft-semiinv.pdf)
 
+- _Neural-Guided Equation Discovery_. {{<br>}}
+  Jannis Brugger, Mattia Cerrato, David **Richter**, Cedric Derstroff, Daniel Maninger, Mira Mezini, Stefan Kramer. {{<br>}}
+  [arxiv](https://arxiv.org/abs/2503.16953)
+
 <!--- _Mechanizing a Choreographic Language with State Transformers_. {{<br>}}-->
 <!--  Timon Böhler, Simon Daniel, David **Richter**, Pascal Weisenburger, Mira Mezini. {{<br>}}-->
 <!--  [preprint](/preprints/2026-draft-chor-novar.pdf)-->
 
 ## Publications
+
+- _Extended Abstract: From Pattern Unification Towards Pattern Matching Unification_. {{<br>}}
+  David **Richter**, Timon Böhler. {{<br>}}
+  TyDe 2026 @ FPW Paris |
+  [arxiv](https://arxiv.org/abs/2607.18455)
+
+- _Mechanizing Choreographic Programs and Hoare Logic with State Transformers_. {{<br>}}
+  Timon Böhler, Simon Daniel, David **Richter**, Pascal Weisenburger, Mira Mezini. {{<br>}}
+  TyDe 2026 @ FPW Paris |
+  [arxiv](https://arxiv.org/abs/2608.16346)
+
+- _On Eliminating the Impossible with Dependent Types: Choreographic Libraries with Proof-Carrying Located Values_. {{<br>}}
+  Simon Daniel, Timon Böhler, David **Richter**, Pascal Weisenburger, Mira Mezini. {{<br>}}
+  TyDe 2026 @ FPW Paris |
+  [arxiv](https://arxiv.org/abs/2608.23237)
 
 - _DeCo: A Core Calculus for Incremental Functional Programming with Generic Data Types_. {{<br>}}
   Timon Böhler, Tobias Reinhard, David **Richter**, Mira Mezini. {{<br>}}
@@ -25,6 +45,11 @@ layout: single
   [paper](https://dl.acm.org/doi/pdf/10.1145/3798264) |
   [artifact](https://zenodo.org/records/18757667) |
   [arxiv](https://arxiv.org/pdf/2602.20866)
+
+- _Prompting Neural-Guided Equation Discovery Based on Residuals_. {{<br>}}
+  Jannis Brugger, Viktor Pfanschilling, David **Richter**, Mira Mezini, Stefan Kramer. {{<br>}}
+  DS 2025: 97-112 |
+  [arxiv](https://arxiv.org/abs/2511.05586)
 
 - *Compiling with Arrays*. {{<br>}}
   David **Richter**, Timon Böhler, Pascal Weisenburger, Mira Mezini. {{<br>}}
