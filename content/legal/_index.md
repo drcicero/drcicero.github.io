@@ -1,6 +1,7 @@
 ---
 title: Legal
 hiddenInList: true
+layout: single
 ---
 
 ### Contact
