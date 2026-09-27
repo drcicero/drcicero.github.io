@@ -1,0 +1,21 @@
+<!doctype html><html lang=en-us><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>generalized function composition for readable pointfree functions</title>
+<link rel=stylesheet href=/css/milligram.css><link rel=stylesheet href=/css/style.css><style>@font-face{font-family:inter;src:url(https://drcicero.github.io/fonts/Inter-VariableFont_opsz,wght.ttf)}</style></head><body><header><nav><ul><li><a href=/>Home</a></li></ul><ul id=menu><li><a href=https://drcicero.github.io/research/ title=Research><span>Research</span></a></li><li><a href=https://drcicero.github.io/teaching/ title=Teaching><span>Teaching</span></a></li><li><a href=https://drcicero.github.io/music/ title=Music><span>Music</span></a></li><li><a href=https://drcicero.github.io/posts/ title=Blog><span>Blog</span></a></li></ul></nav></header><main><article><header><h1>generalized function composition for readable pointfree functions</h1><small>9nd Aug 2022</small></header><div><p>let o be the function composition function, and . the corresponding infix binary operator, i.e.:</p><pre tabindex=0><code>o g f := g . f := \x. g (f x)
+</code></pre><p>let f^n be the n-th repitition of the function f, i.e.:</p><pre tabindex=0><code>f^0    := id
+f^(Sn) := f . f^n
+</code></pre><p>let f_n be the n-th shift of the function f, i.e.:</p><pre tabindex=0><code>f_0     := id
+f_(S n) := o^n f
+</code></pre><p>observe</p><ol><li>repeating composition increases bracket width</li></ol><pre tabindex=0><code>o^0 = id          = \a b c d e f g. a (b) c d e f g
+o^1 = o           = \a b c d e f g. a (b c) d e f g
+o^2 = o.o         = \a b c d e f g. a (b c d) e f g
+o^3 = o.o.o       = \a b c d e f g. a (b c d e) f g
+o^4 = o.o.o.o     = \a b c d e f g. a (b c d e f) g
+</code></pre><ol start=2><li>nesting composition increases bracket offset</li></ol><pre tabindex=0><code>o^0 o = o               = \a b c d e f g. a (b c) d e f g
+o^1 o = o o             = \a b c d e f g. a b (c d) e f g
+o^2 o = o (o o)         = \a b c d e f g. a b c (d e) f g
+o^3 o = o (o (o o))     = \a b c d e f g. a b c d (e f) g
+o^4 o = o (o (o (o o))) = \a b c d e f g. a b c d (e f) g
+</code></pre><p>therefore o^x o^w is an arbitrary bracket with offset x and width w, for example:</p><pre tabindex=0><code>o^2 o^3 = at place 2, take 3 arguments
+        = \a b c d e f g. a b c (d e f) g
+</code></pre><p>if we need multiple brackets, we can join them with o… for example, we might want to write the compositon of multiple binary functions in pointfree</p><pre tabindex=0><code>\f g h x y z. (f x) (g y) (h z)  = o^4 o . o^2 o
+                                 = o^2 o . o^3 o
+</code></pre><p>I played with this using <a href=http://pointfree.io/>http://pointfree.io/</a>.</p></div><div style="display:flex;width:100%;gap:0 15px;flex-wrap:wrap;justify-content:left"></div><div style="display:flex;width:100%;gap:0 15px;flex-wrap:wrap;justify-content:left"></div></article></main><footer><div>© 2026 David Richter<br><a href=https://drcicero.github.io/legal>Imprint / Impressum</a></div></footer><script>document.body.onload=()=>Array.from(document.getElementsByTagName("a")).map(e=>{e.onmouseover=()=>e.href=e.href.replace("tu-...","tu-darmstadt.de")})</script></body></html>

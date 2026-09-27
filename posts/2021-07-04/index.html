@@ -1,0 +1,89 @@
+<!doctype html><html lang=en-us><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>iconic math -- james algebra</title>
+<link rel=stylesheet href=/css/milligram.css><link rel=stylesheet href=/css/style.css><style>@font-face{font-family:inter;src:url(https://drcicero.github.io/fonts/Inter-VariableFont_opsz,wght.ttf)}</style></head><body><header><nav><ul><li><a href=/>Home</a></li></ul><ul id=menu><li><a href=https://drcicero.github.io/research/ title=Research><span>Research</span></a></li><li><a href=https://drcicero.github.io/teaching/ title=Teaching><span>Teaching</span></a></li><li><a href=https://drcicero.github.io/music/ title=Music><span>Music</span></a></li><li><a href=https://drcicero.github.io/posts/ title=Blog><span>Blog</span></a></li></ul></nav></header><main><article><header><h1>iconic math -- james algebra</h1><small>4nd Jul 2021</small></header><div><p>iconic math is something weird and beautiful.</p><p>in this post we look at what i think is called
+the arithmetic interpretation of james algebra [Iconic Arithmetic I, Iconic Arithmetic III],
+a particular interpretation of a particular form of iconic math.</p><p>an expression of james algebra is formed by well-bracketed strings with three
+kinds of brackets &ndash; angle, round and square <code>()[]&lt;></code>.
+further, we may use letters to represent variables <code>a</code>, <code>b</code>, <code>c</code>, &mldr;, e.g.,
+variables in the standard sense as placeholders for other james algebra terms.</p><p>we may denote from time to time the empty term &ldquo;<code> </code>&rdquo; also with <em>void</em>
+as to make it obvious to the reader that we did not just forget something,
+but that we actually meant nothing.
+thereby we also avoiding having to put every expression in quotes.</p><p>as a grammar:</p><pre tabindex=0><code>t ::= void | t t | [t] | (t) | &lt;t&gt;
+</code></pre><p>for example, &ldquo;<code>(() [] &lt;>) [[()] &lt;>]</code>&rdquo; is a term of james algebra,
+just as &ldquo;<code>() () () ()</code>&rdquo;, and &ldquo;<code>a b a (a) &lt;a></code>&rdquo;, and the empty term &ldquo;<code> </code>&rdquo;.</p><p>james algebra has three axioms, called inversion, arrangement, and reflection:</p><ul><li>arrangement allows us to distribute square over round brackets.</li><li>inversion allows us to cancel a round with a square bracket.</li><li>reflection allows us to cancel a term with its angle bracket.</li></ul><p>as equations:</p><pre tabindex=0><code>(a [b c]) = (a [b]) (a [c])     (arrangement)
+([a])     = [(a)] = a           (inversion)
+a &lt;a&gt;     = void                (reflection)
+
+axioms of james algebra
+</code></pre><p>additionally, let me confront you with the following pseudo axioms.</p><p>sequences in james algebra have no order,
+therefore you might want to consider commutativity an axiom.
+yet, as far as i understand, in james algebra it is preferred to think of commutativity
+of terms not as an axiom, but instead that we have to choose an
+order to write them down as a mishap of reality.
+for now i shall call <em>commutativity</em> a pseudo axiom, so we at least do not forget it.</p><p>i shall further comment, that the fact that <em>void</em> actually represents
+the empty term means that you can introduce and eliminate it everywhere,
+thereby generating another pseudo axiom.
+this is now definitely a mishap of reality as the symbol <em>void</em> really
+represents nothing and we only write it in cases where we think it would
+make a reader think that we forgot something.
+(this pseudo axiom has the unavoidable problem that one side of the equation
+is empty, so we use quotes just here.)</p><pre tabindex=0><code>&#39;a b&#39;     = &#39;b a&#39;               (commutativity)
+&#39;&#39;        = void                (identity)
+
+pseudo axioms of james algebra
+</code></pre><h1 id=arithmetic-interpretation>arithmetic interpretation<a hidden class=anchor aria-hidden=true href=#arithmetic-interpretation>#</a></h1><p>every real number can be given a james expression to represent it.
+however, not every james expression represents an real number.
+if i understand correctly they can also represent complex,
+and even surreal numbers (e.g., there is a infinity in there), and more.
+still, we may give many james expressions an arithmetic interpretation
+in the following way:</p><table><thead><tr><th>boundary</th><th>unit</th><th>interpretation</th><th>operator</th><th>interpretation</th><th>name</th></tr></thead><tbody><tr><td>sequence</td><td><em>void</em></td><td>$0$</td><td><code>a b</code></td><td>$a+b$</td><td>addition</td></tr><tr><td>angle</td><td><code>&lt;></code></td><td>$0$</td><td><code>&lt;a></code></td><td>$-a$</td><td>negation</td></tr><tr><td>round</td><td><code>()</code></td><td>$1$</td><td><code>(a)</code></td><td>$#^a$</td><td>raise</td></tr><tr><td>square</td><td><code>[]</code></td><td>$-\infty$</td><td><code>[a]</code></td><td>$log_# a$</td><td>lower</td></tr></tbody></table><p>in english, this means:</p><ul><li>sequence represent the sum of its content, for example <code>a b</code> represents a+b.</li><li>angle brackets represent negation of the content</li><li>round brackets represent raising the content to the power of a base</li><li>square brackets represent lowering of the content through logarithm of a base</li></ul><p>you may (as I did) wonder to what base (denoted hash <code>#</code>) we raise or lower&mldr;
+it seems to me that it does not matter much (well, except if you use base zero
+or one, which would collapse the raising and lowering), because the james
+expressions corresponding to arithmetic will never use an expression where
+the base (here called #) is still there!</p><p>james expressions that correspond to arithmetic
+seem to have a balancing number of raising and lowerings
+such that you can take many bases, as long as you always use the same base.
+i will use eulers number e in the following to check
+the translation to normal arithmetic with a calculator.</p><p>we complete the interpretation by giving the empty brackets a meaning.</p><ul><li>the empty angle bracket represents zero,</li><li>the empty round bracket represents one,</li><li>the empty square bracket represents negative infinity.</li><li>i have not yet seen it said explicitly,
+but this should mean that the empty term
+&ldquo;<code> </code>&rdquo; = <em>void</em> also represents 0.</li></ul><p>we can now show how addition, multiplication and exponentiation
+are represented in james algebra:</p><pre tabindex=0><code>      a     b     =             a + b      = a + b
+   ( [a]   [b] )  =    e^(   ln a + ln b)  = a * b
+  (([[a]]  [b] )) = e^(e^(ln ln a + ln b)) = a ^ b
+</code></pre><p>further, we can show subtraction, division and roots:</p><pre tabindex=0><code>      a   &lt; b &gt;   =             a - b      = a - b
+   ( [a]  &lt;[b]&gt;)  =    e^(   ln a - ln b)  = a / b
+  (([[a]] &lt;[b]&gt;)) = e^(e^(ln ln a - ln b)) = a ^ (1/b)
+</code></pre><p>the first thing that occurs to me is that in the above table you can see that
+in math we do actually already something similar. namely, we are to lazy to
+design and consistently always use a new symbol for roots as the inverse of
+powers. it is just more convenient to reuse the inverse operator of the previous
+operator $x^{\frac{1}{3}}$ at the appropiate position instead of
+a proper root operator $\sqrt[3]{x}$.</p><p>the whole thing further reminds me of the ladder of hyperoperators [Ladder of Hyperoperators], e.g.,
+starting with integer successor (+1), we can define addition, multiplication,
+exponential, tetration, &mldr; as n-repeated application of the previous operation.
+wait, did i say tetration? yes, the interesting thing is that the hyperoperators
+do not stop at exponentiation, although the higher hyperoperators are not known
+as much as the first four.</p><p>wikipedia tells me that next to the hyperoperators there are also the
+commutative hyperoperators, which are more like the james algebra.</p><p>let me also show you a few integers in james algebra:</p><pre tabindex=0><code>    ()()()() =  4
+    ()()()   =  3
+    ()()     =  2
+    ()       =  1
+    void     =  0
+    &lt;()&gt;     = -1
+    &lt;()()&gt;   = -2
+    &lt;()()()&gt; = -3
+</code></pre><p>yes! you got it. james algebra is like math with unary numbers :)
+this is related to one of the most prominent claims of iconic math, namely
+that we should at least be able to visually reason about the terms.
+that is why <em>iconic</em> math in contrast to standard <em>symbolic</em> math may represents integers in unary,
+such that addition corresponds to putting to unary numbers next to each other.
+addition in unary is basically a no-op.</p><p>besides ascii representations of terms, there are also graphical variants
+using 2d circles and 3d boxes and more.</p><p>in the book [Iconic Arithmetic I], the chapter preface and context at the beginning
+are used to how explain how things should be.
+this was only blablabla for me at first.
+only after they start telling you how things actually are, and how they
+related to the normal math we know, i could make sense of this.
+i recommend reading chapter 5 and 6 first,
+and only after that revisit the things before,
+because its only then, after knowing how james algebra works,
+that i could follow the part on philosophy and rational of why they are like this.</p><p>on the other hand this post might already contain sufficient information
+to get the reasoning behind the preface and context. :)</p><p>links:</p><ul><li>Iconic Arithmetic I, William Bricken. <a href=http://iconicmath.com/wordpress/wp-content/mymedia/IconicArithmeticONEchs1-5-6-15public.210315.pdf>official pdf sample excerpt</a></li><li>Iconic Arithmetic II, William Bricken. the sample pdf link to book 2 is sadly broken.</li><li>Iconic Arithmetic III, William Bricken. <a href=http://iconicmath.com/wordpress/wp-content/mymedia/IconicArithmeticTHREEchs31-38-45public.210315.pdf>official pdf sample excerpt</a></li><li><a href=https://iconicmath.com/algebra/james/>https://iconicmath.com/algebra/james/</a></li><li><a href=https://en.m.wikipedia.org/wiki/Hyperoperation#Examples>Ladder of Hyperoperators, Wikipedia.</a></li></ul></div><div style="display:flex;width:100%;gap:0 15px;flex-wrap:wrap;justify-content:left"></div><div style="display:flex;width:100%;gap:0 15px;flex-wrap:wrap;justify-content:left"></div></article></main><footer><div>© 2026 David Richter<br><a href=https://drcicero.github.io/legal>Imprint / Impressum</a></div></footer><script>document.body.onload=()=>Array.from(document.getElementsByTagName("a")).map(e=>{e.onmouseover=()=>e.href=e.href.replace("tu-...","tu-darmstadt.de")})</script></body></html>
