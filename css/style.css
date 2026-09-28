@@ -178,6 +178,33 @@ strong, a, h1, h2, h3, em { color: #a44; }
   .fig-side figcaption { text-align: center; }
 }
 
+/* CV date/description entries */
+.entries { margin-top: 1em; display: flex; flex-direction: column; gap: .7em; }
+.entry { display: flex; gap: 1em; }
+.entry-date { flex: 0 0 8.5em; color: #555; font-size: .85em; }
+.entry-body { flex: 1; min-width: 0; }
+.entry-body p { margin: 0; }
+.entry-body p + p { margin-top: .5em; }
+@media (max-width: 34em) {
+  .entry { flex-direction: column; gap: .1em; }
+  .entry-date { flex: none; }
+}
+
+/* CV theses grid: year / degree / student / title aligned columns */
+.theses-grid {
+  margin-top: 1em; display: grid;
+  grid-template-columns: 2.6em 3em 8em 1fr;
+  column-gap: .8em; row-gap: .4em;
+  font-size: .7em; align-items: baseline;
+}
+.theses-grid .thesis-year, .theses-grid .thesis-degree { color: #555; }
+.theses-grid .thesis-student { white-space: nowrap; }
+.theses-grid .thesis-title p { margin: 0; }
+@media (max-width: 34em) {
+  .theses-grid { grid-template-columns: 1fr; }
+  .theses-grid .thesis-year { margin-top: .6em; font-weight: bold; }
+}
+
 /* collaborator chips */
 .collab { margin-top: 1em; }
 .collab-label {
