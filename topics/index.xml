@@ -12,28 +12,28 @@
       <link>https://drcicero.github.io/topics/choreographic/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://drcicero.github.io/topics/choreographic/</guid>
-      <description>← Back to Home&#xA;Write a whole distributed system as one script, and let the compiler split it up.&#xA;A distributed system is normally written as many separate programs, one per participant, which have to agree on a protocol that exists nowhere in the code. Choreographic programming inverts this: you write the interaction once, as a single program that names every participant, and a compiler projects it onto the individual endpoints.</description>
+      <description>← Back to Home&#xA;Write a whole distributed system as one script, and let the compiler split it up.&#xA;A distributed system is normally written as many separate programs, one per participant, which have to agree on a protocol that exists nowhere in the code. Choreographic programming writes the interaction once, as a single program that names every participant, and a compiler projects it onto the individual endpoints. Protocol mismatches and whole classes of deadlock become programs you cannot write in the first place.</description>
     </item>
     <item>
-      <title>Incremental Programming</title>
+      <title>Array &amp; Differentiable Programming</title>
+      <link>https://drcicero.github.io/topics/array-programming/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://drcicero.github.io/topics/array-programming/</guid>
+      <description>← Back to Home&#xA;Compilers for machine learning: derive and prove what ML frameworks hard-code.&#xA;Machine learning runs on a small set of operations (multiply these arrays, differentiate this, invert that) that a compiler ought to derive rather than have a human write out by hand. My work gives these transformations a functional foundation, so they can be optimized aggressively and proved correct rather than trusted.&#xA;Arrays: a normal form for array programs in which partial evaluation and common subexpression elimination become one algorithm (ECOOP&#39;24).</description>
+    </item>
+    <item>
+      <title>Incremental &amp; Reactive Programming</title>
       <link>https://drcicero.github.io/topics/incremental/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://drcicero.github.io/topics/incremental/</guid>
-      <description>← Back to Home&#xA;Compilers that turn plain functional code into computations that redo only what changed.&#xA;Most programs throw away their own work. Change one cell of a matrix, one row of a table, one node of a tree, and the whole computation runs again from scratch. Incremental programming asks the compiler to do better: from an ordinary functional program, derive a second program that consumes a change to the input and produces the corresponding change to the output, reusing everything that was already computed.</description>
+      <description>← Back to Home&#xA;Compilers that turn plain functional code into computations that redo only what changed.&#xA;Most programs throw away their own work: change one cell of a matrix or one row of a table, and the whole computation runs again from scratch. Incremental programming derives from an ordinary functional program a second one that maps a change to the input to the corresponding change to the output, reusing everything that was already computed.</description>
     </item>
     <item>
-      <title>Type Systems &amp; Mechanized Proofs</title>
-      <link>https://drcicero.github.io/topics/types-and-proofs/</link>
+      <title>Effects &amp; Type Theory</title>
+      <link>https://drcicero.github.io/topics/effects-and-types/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://drcicero.github.io/topics/types-and-proofs/</guid>
-      <description>← Back to Home&#xA;Types catch bugs before a program runs, and stop humans and bots alike from doing nonsense.&#xA;A type system is a negotiation. The programmer wants to write what they mean; the compiler wants a guarantee it can actually check. Push too hard on the guarantee and the notation turns rigid (effects marshalled one per line, motives spelled out by hand). Push too hard on convenience and the guarantee evaporates.</description>
-    </item>
-    <item>
-      <title>Compilers for Machine Learning</title>
-      <link>https://drcicero.github.io/topics/machine-learning/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://drcicero.github.io/topics/machine-learning/</guid>
-      <description>← Back to Home&#xA;Derive and prove what ML frameworks hard-code, and search for the equations that generated the data.&#xA;Machine learning runs on a small set of operations (differentiate this, invert that, multiply these arrays) that a compiler ought to be able to derive rather than have a human write out by hand. That is one half of the work here: taking the transformations deep learning frameworks hard-code and giving them a proper functional foundation, so they can be optimized aggressively and proved correct rather than trusted.</description>
+      <guid>https://drcicero.github.io/topics/effects-and-types/</guid>
+      <description>← Back to Home&#xA;Notations and type checkers that let programmers write what they mean, and still check it.&#xA;A type system is a negotiation. The programmer wants to write what they mean; the compiler wants a guarantee it can actually check. Push too hard on the guarantee and the notation turns rigid (effects marshalled one per line, motives spelled out by hand). Push too hard on convenience and the guarantee evaporates.</description>
     </item>
   </channel>
 </rss>

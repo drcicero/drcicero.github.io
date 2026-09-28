@@ -128,12 +128,6 @@ strong, a, h1, h2, h3, em { color: #a44; }
   display: flex; align-items: center; gap: .7em;
 }
 .paper-headtext { flex: 1; min-width: 0; }
-.paper-icon-circle {
-  background: #fff; border-radius: 50%;
-  width: 2.2em; height: 2.2em; flex-shrink: 0;
-  display: flex; align-items: center; justify-content: center;
-}
-.paper-icon { width: 1.3em; height: 1.3em; }
 .paper-title { margin: .15em 0 0; font-size: 1em; }
 
 /* timeline chip: year + venue */
