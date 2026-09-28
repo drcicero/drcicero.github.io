@@ -181,7 +181,7 @@ strong, a, h1, h2, h3, em { color: #a44; }
 /* CV date/description entries */
 .entries { margin-top: 1em; display: flex; flex-direction: column; gap: .7em; }
 .entry { display: flex; gap: 1em; }
-.entry-date { flex: 0 0 8.5em; color: #555; font-size: .85em; }
+.entry-date { flex: 0 0 6.375em; color: #555; font-size: .85em; }
 .entry-body { flex: 1; min-width: 0; }
 .entry-body p { margin: 0; }
 .entry-body p + p { margin-top: .5em; }
@@ -189,6 +189,11 @@ strong, a, h1, h2, h3, em { color: #a44; }
   .entry { flex-direction: column; gap: .1em; }
   .entry-date { flex: none; }
 }
+
+/* inline details/summary toggle inside a CV entry */
+.entry-details { margin-top: .5em; font-size: .85em; }
+.entry-details summary { cursor: pointer; color: #a44; }
+.entry-details ul { margin-top: .3em; }
 
 /* CV theses grid: year / degree / student / title aligned columns */
 .theses-grid {
